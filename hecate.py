@@ -2,6 +2,7 @@ from networkx import DiGraph
 
 from hecate.services.create_circuit import CreateCircuit
 from hecate.services.generate_signal_path import GenerateSignalPath
+from hecate.services.identify_sensitive_nodes import IdentifySensitiveNodes
 from hecate.services.read_circuit import ReadCircuit
 from pathlib import Path
 from os.path import join as path_concat
@@ -20,12 +21,18 @@ circuit.create_edges_pull_down()
 # circuit.show_edges()
 #
 signal_path = GenerateSignalPath(circuit.circuit, circuit_reader.circuit_metadata)
-signal_path.set_inputs_high()
+signal_path.set_input_values()
 #
-# circuit.show_nodes()
 #
 signal_path.generate_signal_path_pull_up()
 signal_path.generate_signal_path_pull_down()
 signal_path.generate_signals_path_from_out()
 
+# circuit.show_nodes()
 circuit.show_edges()
+
+possible_sensitive = circuit_reader.get_possible_sensitive_list()
+output = circuit_reader.circuit_metadata.get_output()
+sensitive_nodes = IdentifySensitiveNodes(output, possible_sensitive, signal_path.circuit)
+sensitive_nodes.find_sensitive_nodes()
+print(sensitive_nodes.sensitive_nodes)

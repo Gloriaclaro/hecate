@@ -15,6 +15,7 @@ class ReadCircuit:
         self.n_transistors_list = []
         self.__signals_list = []
         self.__signals_name_list = []
+        self.__possible_sensitive_list = []
 
     def read_ngspice_file(self):
         file = open(self.file_path)
@@ -27,6 +28,9 @@ class ReadCircuit:
 
     def get_signals_list(self):
         return self.__signals_list
+
+    def get_possible_sensitive_list(self):
+        return self.__possible_sensitive_list
 
     def _create_metadata(self, metadata_lines: list):
         supply_list = metadata_lines[0].strip().split(" ")
@@ -60,10 +64,11 @@ class ReadCircuit:
         for raw_transistor in transistors:
             transistor = Transistor(raw_transistor.strip().split(" "))
             transistor_type = transistor.get_type()
-            self._create_signal(transistor, transistor_type)
             if transistor_type == self.circuit_metadata.get_n_type():
+                self._create_signal(transistor, bulk=0)
                 self.n_transistors_list.append(transistor)
             elif transistor_type == self.circuit_metadata.get_p_type():
+                self._create_signal(transistor, bulk=1)
                 self.p_transistors_list.append(transistor)
 
     def _create_root_signals(self):
@@ -73,25 +78,27 @@ class ReadCircuit:
         self.__signals_list = [
             (supply, {"signal": RootSignal(supply, 1)}),
             (ground, {"signal": RootSignal(ground, 0)}),
-            (output, {"signal": MiddleSignal(output)})
+            (output, {"signal": MiddleSignal("x", output)})
         ]
         self.__signals_name_list = [
             supply, ground, output
         ]
 
-    def _create_signal(self, transistor: Transistor, transistor_type: str):
+    def _create_signal(self, transistor: Transistor, bulk: int):
 
         drain = transistor.get_drain_name()
         source = transistor.get_source_name()
         gate = transistor.get_gate_name()
 
         if drain not in self.__signals_name_list:
-            self.__signals_list.append((drain, {"signal": MiddleSignal(drain)}))
+            self.__signals_list.append((drain, {"signal": MiddleSignal(bulk, drain)}))
             self.__signals_name_list.append(drain)
+            self.__possible_sensitive_list.append(drain)
 
         if source not in self.__signals_name_list:
-            self.__signals_list.append((source, {"signal": MiddleSignal(source)}))
-            self.__signals_name_list.append(drain)
+            self.__signals_list.append((source, {"signal": MiddleSignal(bulk, source)}))
+            self.__signals_name_list.append(source)
+            self.__possible_sensitive_list.append(source)
 
         if gate not in self.__signals_name_list:
             self.__signals_list.append((f"p_{gate}", {"signal": PSignal(gate)}))
