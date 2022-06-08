@@ -1,9 +1,9 @@
-from networkx import DiGraph
+from networkx import Graph
 
 
 class IdentifySensitiveNodes:
 
-    def __init__(self, output, possible_sensitive: list, circuit: DiGraph):
+    def __init__(self, output, possible_sensitive: list, circuit: Graph):
         self.sensitive_nodes = [output]
         self.possible_sensitive_nodes = possible_sensitive
         self.circuit = circuit
@@ -16,5 +16,3 @@ class IdentifySensitiveNodes:
                 self.sensitive_nodes.append(node)
             elif node_signal_value == 1 and node_signal.get_signal_bulk() == 0:
                 self.sensitive_nodes.append(node)
-            else:
-                continue

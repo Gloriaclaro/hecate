@@ -1,4 +1,4 @@
-from networkx import DiGraph
+from networkx import Graph
 
 from hecate.services.create_circuit import CreateCircuit
 from hecate.services.generate_signal_path import GenerateSignalPath
@@ -11,7 +11,7 @@ BASE_PATH = Path(__file__).parent
 
 circuit_reader = ReadCircuit(path_concat(BASE_PATH, "circuit"))
 circuit_reader.read_ngspice_file()
-graph = DiGraph()
+graph = Graph()
 
 circuit = CreateCircuit(graph, circuit_reader)
 circuit.create_nodes()

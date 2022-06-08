@@ -11,6 +11,6 @@ class NSignal(Signal):
             circuit[node][next_node]["signal"].set_signal_value(last_signal)
             circuit[node][next_node]['value'] = last_signal
         else:
-            last_signal = 'x'
             circuit[node][next_node]['value'] = last_signal
+            last_signal = 'x'
         return last_signal

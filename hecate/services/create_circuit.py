@@ -1,4 +1,4 @@
-from networkx import DiGraph
+from networkx import Graph
 
 from hecate.domain.entities.edge import EdgeSignal
 from hecate.domain.entities.middle_signal import MiddleSignal
@@ -9,7 +9,7 @@ from hecate.services.read_circuit import ReadCircuit
 
 class CreateCircuit:
 
-    def __init__(self, graph: DiGraph, circuit_reader: ReadCircuit):
+    def __init__(self, graph: Graph, circuit_reader: ReadCircuit):
         self.circuit = graph
         self.circuit_reader = circuit_reader
 
