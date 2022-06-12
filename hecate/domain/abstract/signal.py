@@ -15,7 +15,9 @@ class Signal(ABC):
         return self.__signal
 
     def set_signal_value(self, signal: Union[str, int]):
-        self.__signal = signal
+        if self.get_signal_value() == 'x':
+            self.__signal = signal
+        return
 
     @abstractmethod
     def set_edge_signal(self, last_signal: Union[str, int], node: str, next_node: str, circuit):

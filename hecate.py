@@ -9,7 +9,7 @@ from os.path import join as path_concat
 
 BASE_PATH = Path(__file__).parent
 
-circuit_reader = ReadCircuit(path_concat(BASE_PATH, "circuit"))
+circuit_reader = ReadCircuit(path_concat(BASE_PATH, "circuit_nor"))
 circuit_reader.read_ngspice_file()
 graph = Graph()
 
@@ -17,8 +17,8 @@ circuit = CreateCircuit(graph, circuit_reader)
 circuit.create_nodes()
 circuit.create_edges_pull_up()
 circuit.create_edges_pull_down()
-# circuit.create_edges_between_two_middle_nodes()
-# circuit.show_edges()
+# circuit_nor.create_edges_between_two_middle_nodes()
+# circuit_nor.show_edges()
 #
 signal_path = GenerateSignalPath(circuit.circuit, circuit_reader.circuit_metadata)
 signal_path.set_input_values()
