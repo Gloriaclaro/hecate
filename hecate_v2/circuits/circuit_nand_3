@@ -6,7 +6,7 @@
 .output out
 MP1 out a VDD VDD PMOS
 MP2 out b VDD VDD PMOS
-MP2 out c VDD VDD PMOS
+MP3 out c VDD VDD PMOS
 MN1 out a x1 GND NMOS
 MN2 x1 b x2 GND NMOS
 MN3 x2 c GND GND NMOS

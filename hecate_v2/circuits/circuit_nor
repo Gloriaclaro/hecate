@@ -1,0 +1,10 @@
+.supply VDD
+.ground GND
+.P-Type PMOS
+.N-Type NMOS
+.inputs a b
+.output out
+MP1 x1 a VDD VDD PMOS
+MP2 out b x1 VDD PMOS
+MN1 out a GND GND NMOS
+MN2 out b GND GND NMOS

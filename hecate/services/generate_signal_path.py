@@ -108,5 +108,12 @@ class GenerateSignalPath:
     def set_input_values(self):
         for input_name in self.circuit_metadata.get_inputs():
             value = int(input(f"Set value for {input_name}: \n"))
-            self.circuit.nodes[f"p_{input_name}"]["signal"].set_signal_value(value)
-            self.circuit.nodes[f"n_{input_name}"]["signal"].set_signal_value(value)
+            try:
+                self.circuit.nodes[f"p_{input_name}"]["signal"].set_signal_value(value)
+                self.circuit.nodes[f"n_{input_name}"]["signal"].set_signal_value(value)
+            except KeyError:
+                pass
+            try:
+                self.circuit.nodes[f"{input_name}"]["signal"].set_signal_value(value)
+            except KeyError:
+                pass
