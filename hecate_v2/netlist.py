@@ -6,7 +6,7 @@ from hecate_v2.transistor import Transistor
 
 
 class Netlist:
-
+    WITHOUT_GATE = -1
     BASE_PATH = Path(__file__).parent
     SIGNALS_NAME_INDEX = 1
     SIGNAL_DESCRIPTION_INDEX = 0
@@ -93,7 +93,7 @@ class Netlist:
             bulk = Signal(transistor_info[self.BULK_SIGNAL_NAME])
             transistor_type = transistor_info[self.TRANSISTOR_TYPE]
             self.set_bulk_value(bulk, transistor_type)
-            signals = self.get_or_create_signal([drain, gate, source], name)
+            signals = self.get_or_create_signal([drain, source, gate], name)
             transistor = Transistor(name, *signals, bulk, transistor_type)
             self.set_transistor_adj(name, transistor, signals)
             self.transistors[name] = transistor
@@ -116,7 +116,7 @@ class Netlist:
 
         return signals
 
-    @staticmethod
-    def set_transistor_adj(transistor_name: str, transistor: Transistor, signals: list):
+    def set_transistor_adj(self, transistor_name: str, transistor: Transistor, signals: list):
+        signals = signals[:self.WITHOUT_GATE]
         for signal in signals:
             signal.set_transistor_adj(transistor_name, transistor)

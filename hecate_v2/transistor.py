@@ -1,10 +1,10 @@
 
 class Transistor:
-    def __init__(self, name: str, source, gate, drain, bulk, transistor_type: str):
+    def __init__(self, name: str, source, drain, gate, bulk, transistor_type: str):
         self.name = name
         self.source = source
-        self.gate = gate
         self.drain = drain
+        self.gate = gate
         self.bulk = bulk
         self.transistor_type = transistor_type
 

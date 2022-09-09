@@ -19,3 +19,6 @@ class Signal:
 
     def set_transistor_adj(self, transistor_name: str, transistor: Transistor):
         self.transistor_adj[transistor_name] = transistor
+
+    def reset_signal_value(self):
+        self.__signal = None
