@@ -1,0 +1,5 @@
+vector | sensitive_node 
+00 | ['out']
+01 | ['out']
+10 | ['x1', 'out']
+11 | ['out']

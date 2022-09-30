@@ -1,0 +1,3 @@
+vector | sensitive_node 
+0 | ['out']
+1 | ['out']
