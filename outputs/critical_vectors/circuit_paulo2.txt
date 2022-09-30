@@ -1,0 +1,5 @@
+Vector | #Nodes count 
+11 | 5 
+01 | 4 
+10 | 3 
+00 | 2 
