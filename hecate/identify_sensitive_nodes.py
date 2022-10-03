@@ -7,6 +7,7 @@ class IdentifySensitiveNodes:
         self.sensitive_nodes = []
         self.outputs = circuit.output_signals_list
         self.possible_sensitive_nodes = circuit.intern_signals_list
+        self.inputs = circuit.input_signals_list
 
     def find_sensitive_node(self, node):
         node_value = node.get_signal_value()
@@ -24,7 +25,7 @@ class IdentifySensitiveNodes:
         return is_sensitive
 
     def find_all_sensitive_nodes(self):
-        for node in [*self.possible_sensitive_nodes, *self.outputs]:
+        for node in [*self.possible_sensitive_nodes, *self.outputs, *self.inputs]:
             node_value = node.get_signal_value()
             if node_value is None:
                 continue

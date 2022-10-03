@@ -1,0 +1,5 @@
+Node | #Vectors 
+out | 16 
+x1 | 7 
+x2 | 3 
+x3 | 1 
