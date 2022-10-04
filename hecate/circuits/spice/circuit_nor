@@ -2,11 +2,9 @@
 .ground GND
 .P-Type PMOS
 .N-Type NMOS
-.inputs a b c
-.output out
+.inputs a b
+.outputs out
 MP1 x1 a VDD VDD PMOS
-MP2 x2 b x1 VDD PMOS
-MP3 out c x2 VDD PMOS
+MP2 out b x1 VDD PMOS
 MN1 out a GND GND NMOS
 MN2 out b GND GND NMOS
-MN3 out c GND GND NMOS

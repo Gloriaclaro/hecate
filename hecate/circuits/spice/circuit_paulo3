@@ -3,7 +3,7 @@
 .P-Type PMOS
 .N-Type NMOS
 .inputs a b c
-.output d e
+.outputs d e
 MP1 x1 a b VDD PMOS
 MP2 a b x1 VDD PMOS
 MP3 x3 x1 VDD VDD PMOS

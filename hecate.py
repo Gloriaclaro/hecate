@@ -68,9 +68,9 @@ class Hecate:
                 self.signal_path.reset()
 
 
-hecate = Hecate('circuit_nand_4')
+hecate = Hecate('test')
 hecate.sensitive_nodes_for_all_input_values()
-hecate.vector_by_sensitive_node("c")
+hecate.vector_by_sensitive_node("N10")
 hecate.critical_nodes()
 hecate.critical_vectors()
 

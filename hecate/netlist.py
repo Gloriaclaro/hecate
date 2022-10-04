@@ -18,7 +18,7 @@ class Netlist:
     TRANSISTOR_TYPE = 5
 
     def __init__(self,  file_name: str):
-        self.file_path = path_concat(self.BASE_PATH, "circuits", file_name)
+        self.file_path = path_concat(self.BASE_PATH, "circuits", "spice", file_name)
         self.pmos: str = None
         self.nmos: str = None
         self.transistors = {}
@@ -67,7 +67,7 @@ class Netlist:
                     signal = self.create_signal(name)
                     self.input_signals_list.append(signal)
 
-            if "output" in description:
+            if "outputs" in description:
                 for name in names:
                     signal = self.create_signal(name)
                     self.output_signals_list.append(signal)
@@ -86,6 +86,8 @@ class Netlist:
     def _create_transistors(self, transistors_list: list):
         for line in transistors_list:
             transistor_info = line.strip().split(" ")
+            if len(transistor_info) < 5:
+                continue
             name = transistor_info[self.TRANSISTOR_NAME]
             drain = transistor_info[self.DRAIN_SIGNAL_NAME]
             gate = transistor_info[self.GATE_SIGNAL_NAME]
