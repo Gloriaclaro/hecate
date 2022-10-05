@@ -17,6 +17,8 @@ class GenerateInputs:
             binaries = map(int, list(vector))
             vectors_input_name = dict(zip(self._inputs_name_list, binaries))
             vectors.append(vectors_input_name)
+            if i == 2:
+                return vectors
         return vectors
 
     def get_inputs_names(self):

@@ -48,19 +48,18 @@ class NangateParser:
             if is_logic_gate_info:
                 logic_gate_info.append(line.strip())
 
-    def read_verilog(self):
+    def read_verilog_old(self):
         verilog = open(self.verilog)
         verilog_lines = verilog.readlines()
         is_logic_gate = False
         logic_gates = []
         inputs = []
         outputs = []
-        for line in verilog_lines:
-
-            if len(line.strip()) == 0:
+        for raw_line in verilog_lines:
+            line = raw_line.strip()
+            if len(line) == 0:
                 continue
-
-            raw_info = line.strip().split(" ")
+            raw_info = line.split(" ")
 
             if line.startswith('input'):
                 inputs = raw_info[self.INPUTS_INDEX].replace(';', "").split(',')
@@ -72,7 +71,7 @@ class NangateParser:
                 break
 
             elif is_logic_gate:
-                logic_gate_pins = line[line.find('(')+1:line.find(')')].split(",")
+                logic_gate_pins = line[line.find('(') + 1:line.find(')')].split(",")
                 logic_gate_type = raw_info[self.LOGIC_GATE_INFO_INDEX]
                 logic_gate_name = raw_info[self.LOGIC_GATE_NAME_INDEX]
                 logic_gate = self.logic_gates.get(logic_gate_type)
@@ -84,6 +83,49 @@ class NangateParser:
                 )
 
             if line.startswith('wire'):
+                is_logic_gate = True
+
+        self.write_spice(logic_gates, inputs, outputs)
+
+    def read_verilog_abc(self):
+        verilog = open(self.verilog)
+        verilog_lines = verilog.read()
+        is_logic_gate = False
+        logic_gates = []
+        inputs = []
+        outputs = []
+        for raw_line in verilog_lines.strip().split(";"):
+            line = ' '.join(raw_line.split())
+            pin_info = line.replace(',', '').split()
+            if pin_info[self.DESCRIPTION_INDEX] == 'input':
+                inputs = pin_info[self.INPUTS_INDEX:]
+
+            elif pin_info[self.DESCRIPTION_INDEX] == 'output':
+                outputs = pin_info[self.OUTPUTS_INDEX:]
+
+            if line.startswith('endmodule'):
+                break
+
+            elif is_logic_gate:
+                logic_gate_type = pin_info[self.LOGIC_GATE_INFO_INDEX]
+                pin_info = " ".join(pin_info[self.LOGIC_GATE_NAME_INDEX:])
+                logic_gate_pins = pin_info.replace(')', "(").replace('.', '').strip().split('(')
+                logic_gate_name = logic_gate_pins[self.LOGIC_GATE_INFO_INDEX]
+                pin_info = logic_gate_pins[self.LOGIC_GATE_NAME_INDEX:-2]
+                pins_map = {}
+                for i in range(0, len(pin_info), 2):
+                    pins_map[pin_info[i].strip()] = pin_info[i+1].strip()
+
+                logic_gate = self.logic_gates.get(logic_gate_type)
+
+                logic_gates.append(
+                    logic_gate.abc_to_spice(
+                        new_name=logic_gate_name,
+                        pins_map=pins_map,
+                    ) + '\n'
+                )
+
+            if pin_info[self.DESCRIPTION_INDEX] == 'wire':
                 is_logic_gate = True
 
         self.write_spice(logic_gates, inputs, outputs)
@@ -132,10 +174,10 @@ class NangateParser:
             power=power,
             gnd=gnd,
             transistors=transistors
-                )
+        )
 
 
 if __name__ == '__main__':
-    parser = NangateParser("test.v")
+    parser = NangateParser("c432_zn.v")
     parser.read_library()
-    parser.read_verilog()
+    parser.read_verilog_abc()

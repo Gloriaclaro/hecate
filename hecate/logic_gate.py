@@ -53,3 +53,19 @@ class LogicGate:
             transistors_spice = transistors_spice + transistor + "\n"
         return transistors_spice
 
+    def abc_to_spice(self, new_name: str, pins_map: dict):
+        transistors_spice = ""
+        for transistor in self.transistors:
+            raw_transistor = transistor.split(' ')
+            transistor = raw_transistor[self.TRANSISTOR_NAME_INDEX] + "_" + new_name + " "
+            for pin in raw_transistor[self.PIN_START:self.PIN_END]:
+                if pin in pins_map.keys():
+                    transistor = transistor + pins_map[pin] + " "
+
+                elif pin == self.power or pin == self.gnd:
+                    transistor = transistor + pin.strip() + " "
+                else:
+                    transistor = transistor + pin.strip() + "_" + new_name.strip() + " "
+            transistor = transistor + " ".join(raw_transistor[self.PIN_END:])
+            transistors_spice = transistors_spice + transistor + "\n"
+        return transistors_spice

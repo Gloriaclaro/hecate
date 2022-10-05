@@ -68,10 +68,15 @@ class Hecate:
                 self.signal_path.reset()
 
 
-hecate = Hecate('test')
+hecate = Hecate('c432')
 hecate.sensitive_nodes_for_all_input_values()
 hecate.vector_by_sensitive_node("N10")
 hecate.critical_nodes()
 hecate.critical_vectors()
 
 #TODO Nodo crítico, vetor crítico, analise por nodo trazendo os vatores
+#TODO tempo
+#TODO cli
+#TODO ABC parser
+# Analise por vetor -> traz todos os nodos sensíveis para o vetor específico
+# Analise por nodo -> traz a quantidade de vetores no qual os nodos são sensíveis
