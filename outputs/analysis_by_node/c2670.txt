@@ -1,0 +1,3 @@
+Nome do arquivo avaliado: c2670 
+Quantidade de vetores testados: 10002 - 7.245992171713982e-67 
+Node N10 

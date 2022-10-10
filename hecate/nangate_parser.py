@@ -4,7 +4,7 @@ from os.path import join as path_concat
 from typing import List
 
 from hecate.logic_gate import LogicGate
-
+import click
 
 class NangateParser:
     BASE_PATH = Path(__file__).parent
@@ -177,7 +177,13 @@ class NangateParser:
         )
 
 
-if __name__ == '__main__':
-    parser = NangateParser("c432_zn.v")
+@click.command(name='verilog_to_spice')
+@click.option("-n", "--name", type=str, required=True, help="Circuit verilog name")
+def verilog_to_spice(name):
+    parser = NangateParser(f"{name}.v")
     parser.read_library()
     parser.read_verilog_abc()
+
+
+if __name__ == '__main__':
+    verilog_to_spice()

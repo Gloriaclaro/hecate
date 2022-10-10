@@ -1,0 +1,3 @@
+Nome do arquivo avaliado: c3540 
+Quantidade de vetores testados: 102 - 9.059419880941277e-14 
+Node N10 

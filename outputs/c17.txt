@@ -1,3 +1,6 @@
+runtime: 0.0901842
+Nome do arquivo avaliado: c17 
+Quantidade de vetores testados: 32 - 1.0 
 vector | sensitive_node 
 00000 | ['N10', 'N11', 'N16', 'net_{3}', 'N19', 'N22', 'N23']
 00001 | ['N10', 'N11', 'N16', 'N19', 'net_{5}', 'N22', 'N23']
@@ -31,3 +34,4 @@ vector | sensitive_node
 11101 | ['N10', 'net_{1}', 'N11', 'N16', 'N19', 'N22', 'N23']
 11110 | ['N10', 'N11', 'net_{2}', 'N16', 'N19', 'N22', 'N23']
 11111 | ['N10', 'N11', 'net_{2}', 'N16', 'N19', 'N22', 'N23']
+runtime: 0.0020758999999999916

@@ -9,6 +9,10 @@ class GenerateInputs:
         self._inputs = inputs
         self._inputs_name_list = self.get_inputs_names()
 
+    def get_input_vector(self, vector: str):
+        binaries = map(int, list(vector))
+        return dict(zip(self._inputs_name_list, binaries))
+
     def get_all_input_vectors(self):
         vectors = []
         length = len(self._inputs)
@@ -17,9 +21,9 @@ class GenerateInputs:
             binaries = map(int, list(vector))
             vectors_input_name = dict(zip(self._inputs_name_list, binaries))
             vectors.append(vectors_input_name)
-            if i == 2:
-                return vectors
-        return vectors
+            if i > 10000:
+                break
+        return vectors, 2**length, len(vectors)
 
     def get_inputs_names(self):
         return [input.name for input in self._inputs]

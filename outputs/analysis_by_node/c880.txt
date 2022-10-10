@@ -1,0 +1,3 @@
+Nome do arquivo avaliado: c880 
+Quantidade de vetores testados: 10002 - 8.675352103360012e-15 
+Node N10 

@@ -1,0 +1,3 @@
+Nome do arquivo avaliado: c1355 
+Quantidade de vetores testados: 10002 - 4.548383003566414e-09 
+Node N10 
