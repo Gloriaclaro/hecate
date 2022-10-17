@@ -1,4 +1,0 @@
-runtime: 0.1579436
-Nome do arquivo avaliado: c6288 
-Quantidade de vetores testados: 3 - 6.984919309616089e-10 
-vector | sensitive_node 

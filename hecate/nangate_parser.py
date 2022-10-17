@@ -18,10 +18,10 @@ class NangateParser:
     LOGIC_GATE_NAME_INDEX = 1
     LOGIC_GATE_INFO_INDEX = 0
 
-    def __init__(self,  file_name: str):
+    def __init__(self,  file_name: str, library: str = "NangateLibrary.spi"):
         self.file_name = file_name
         self.verilog = path_concat(self.BASE_PATH, "circuits", "verilog", file_name)
-        self.library = path_concat(self.BASE_PATH, "circuits", "library", "NangateLibrary.spi")
+        self.library = path_concat(self.BASE_PATH, "circuits", "library", library)
         self.power = None
         self.gnd = None
         self.pmos = "PMOS_VTL"
@@ -183,7 +183,6 @@ def verilog_to_spice(name):
     parser = NangateParser(f"{name}.v")
     parser.read_library()
     parser.read_verilog_abc()
-
 
 if __name__ == '__main__':
     verilog_to_spice()

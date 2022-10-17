@@ -1,5 +1,0 @@
-vector | sensitive_node 
-00 | ['d', 'out']
-01 | ['c', 'd', 'x2', 'out']
-10 | ['d', 'x1', 'out']
-11 | ['c', 'd', 'x3', 'x4', 'out']

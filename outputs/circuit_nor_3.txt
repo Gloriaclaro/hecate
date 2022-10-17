@@ -1,9 +1,0 @@
-vector | sensitive_node 
-000 | ['out']
-001 | ['out']
-010 | ['x2', 'out']
-011 | ['out']
-100 | ['x1', 'x2', 'out']
-101 | ['out']
-110 | ['x2', 'out']
-111 | ['out']
