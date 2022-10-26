@@ -1,0 +1,8 @@
+Nome do arquivo avaliado: schvittz_nangate 
+Quantidade de vetores testados: 4 - 1.0 
+vector | sensitive_node 
+00 | ['N3', 'N4', 'N22']
+01 | ['N4', 'net_0_NAND2_1', 'N22']
+10 | ['N3', 'N22']
+11 | ['N22']
+runtime: 0.0002425000000000066

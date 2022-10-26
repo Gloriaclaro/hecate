@@ -13,35 +13,26 @@ class FindSignalsValue:
         self._signals_control = []
 
     def generate_output_values(self):
+        same_values = []
         for output in self.netlist.output_signals_list:
-            self.find_path_from_signal(output)
+            same_values.append(self.find_path_from_signal(output))
+        return all(same_values)
 
     def find_path_from_signal(self, signal: Signal):
         value, signals_list = self.find_signals_value(signal, [])
         self.set_signals_value(value, signals_list)
-
-    def find_path(self, transistor: Transistor, gate: Signal):
-        gate_value = gate.get_signal_value()
-
-        there_is_a_path = False
-        transistor_type = transistor.get_type()
-        if transistor_type == self.netlist.pmos and gate_value == 0:
-            there_is_a_path = True
-
-        if transistor_type == self.netlist.nmos and gate_value == 1:
-            there_is_a_path = True
-
-        return there_is_a_path
+        values = []
+        for signal in signals_list:
+            values.append(signal.get_signal_value())
+        return all(values)
 
     def find_signals_value(self, signal: Signal, signals_list: [Signal]):
         next_transistors: List[Transistor] = signal.transistor_adj.values()
         value = None
         for transistor in next_transistors:
-
             gate = transistor.get_gate()
             drain = transistor.get_drain()
             source = transistor.get_source()
-
             gate_value = gate.get_signal_value()
 
             if gate_value is None:
@@ -75,6 +66,18 @@ class FindSignalsValue:
                         value = aux_value
 
         return value, signals_list
+
+    def find_path(self, transistor: Transistor, gate: Signal):
+        gate_value = gate.get_signal_value()
+        there_is_a_path = False
+        transistor_type = transistor.get_type()
+        if transistor_type == self.netlist.pmos and gate_value == 0:
+            there_is_a_path = True
+
+        if transistor_type == self.netlist.nmos and gate_value == 1:
+            there_is_a_path = True
+
+        return there_is_a_path
 
     def set_signals_value(self, value: int, signals_list: [Signal]):
         for signal in signals_list:

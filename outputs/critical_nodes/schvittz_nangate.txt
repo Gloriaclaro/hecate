@@ -1,0 +1,7 @@
+Nome do arquivo avaliado: schvittz_nangate 
+Quantidade de vetores testados: 4 - 1.0 
+Node | #Vectors 
+N3 | 4 
+N4 | 4 
+N22 | 4 
+net_0_NAND2_1 | 1 

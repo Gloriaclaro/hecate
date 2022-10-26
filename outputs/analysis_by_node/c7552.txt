@@ -1,3 +1,0 @@
-Nome do arquivo avaliado: c7552 
-Quantidade de vetores testados: 3 - 1.458519205748705e-62 
-Node N10 

@@ -1,5 +1,0 @@
-Vector | #Nodes count 
-10 | 2 
-00 | 1 
-01 | 1 
-11 | 1 

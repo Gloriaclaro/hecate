@@ -7,3 +7,13 @@
 #TODO complexidade do algoritmo
 
 #TODO atualização do parser para cosiderar variantes (tipos de transistores, sinais de alimentação ...)
+
+#TODO estrutura da metodologia
+#TODO como apresentar os resultados
+
+""" Critical vectors
+          #nodes    sample of 10
+            9           10%
+c17         8-7         80%
+            6           10%
+"""

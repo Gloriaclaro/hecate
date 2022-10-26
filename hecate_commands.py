@@ -1,4 +1,5 @@
 import asyncio
+from typing import List
 
 from hecate.generate_inputs import GenerateInputs
 from hecate.identify_sensitive_nodes import IdentifySensitiveNodes
@@ -7,6 +8,8 @@ from hecate.propagate_signal import FindSignalsValue
 from pathlib import Path
 from os.path import join as path_concat
 import timeit
+
+from hecate.signal import Signal
 
 
 class Hecate:
@@ -20,6 +23,7 @@ class Hecate:
         self.sensitive_nodes = []
         self.total_vectors = None
         self.evaluated_vectors = None
+        self.output_values = {}
 
     def vector_by_sensitive_node(self, node: str):
         with open(path_concat(self.BASE_PATH, "outputs", "analysis_by_node", self.circuit + ".txt"), 'w') as output:
@@ -82,7 +86,10 @@ class Hecate:
     def find_sensitive_node(self, vector: dict, output):
         self.signal_path.generate_input_values(**vector)
         self.signal_path.generate_output_values()
-        self.identify.find_all_sensitive_nodes()
+        self.save_outputs_value()
+        signals = self.node_is_mask()
+        self.identify.find_sensitive_nodes_from(signals)
+        # self.identify.find_all_sensitive_nodes()
         str_vector = ''.join(str(val) for val in vector.values())
         # print({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
         self.sensitive_nodes.append({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
@@ -102,7 +109,9 @@ class Hecate:
 
         self.signal_path.generate_input_values(**vector)
         self.signal_path.generate_output_values()
-        self.identify.find_all_sensitive_nodes()
+        self.save_outputs_value()
+        signals = self.node_is_mask()
+        self.identify.find_sensitive_nodes_from(signals)
         str_vector = ''.join(str(val) for val in vector.values())
         print({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
         self.sensitive_nodes.append({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
@@ -112,3 +121,50 @@ class Hecate:
         stop = timeit.default_timer()
         print(f'runtime: {stop - start}')
 
+    def node_is_mask(self) -> List[Signal]:
+        signals_list = []
+        for signal in self.netlist.intern_signals_list:
+            signal_value = signal.get_signal_value()
+            signal.reset_signal_value()
+            self.change_signal_value(signal, signal_value)
+            same_value = self.signal_path.generate_output_values()
+            is_different = self.is_output_different()
+            if is_different or not same_value:
+                signals_list.append(signal)
+            signal.reset_signal_value()
+            signal.set_signal_value(signal_value)
+        for output in self.netlist.output_signals_list:
+            output.set_signal_value(self.output_values[output.name])
+
+        return signals_list
+
+    def save_outputs_value(self):
+        for output in self.netlist.output_signals_list:
+            self.output_values[output.name] = output.get_signal_value()
+            output.reset_signal_value()
+
+    @staticmethod
+    def change_signal_value(signal: Signal, signal_value: [int, None]):
+        if signal_value is None:
+            return
+        elif signal_value == 0:
+            signal.set_signal_value(1)
+        elif signal_value == 1:
+            signal.set_signal_value(0)
+
+    def is_output_different(self):
+        is_different = False
+        for output in self.netlist.output_signals_list:
+            output_new_value = output.get_signal_value()
+            output_old_value = self.output_values[output.name]
+            output.reset_signal_value()
+            if output_new_value != output_old_value:
+                is_different = True
+        return is_different
+
+
+
+
+if __name__ == '__main__':
+    hecate = Hecate("schvittz_nangate")
+    hecate.sensitive_nodes_for_all_input_values(10)

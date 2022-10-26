@@ -1,3 +1,0 @@
-Nome do arquivo avaliado: c432 
-Quantidade de vetores testados: 10002 - 1.4554825611412525e-07 
-Node N10 

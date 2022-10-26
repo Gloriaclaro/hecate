@@ -1,4 +1,7 @@
+from typing import List
+
 from hecate.netlist import Netlist
+from hecate.signal import Signal
 
 
 class IdentifySensitiveNodes:
@@ -26,6 +29,7 @@ class IdentifySensitiveNodes:
 
     def find_all_sensitive_nodes(self):
         for node in [*self.possible_sensitive_nodes, *self.outputs, *self.inputs]:
+            # print(node.name,  node.get_signal_value())
             node_value = node.get_signal_value()
             if node_value is None:
                 continue
@@ -40,3 +44,17 @@ class IdentifySensitiveNodes:
 
     def reset_sensitive_nodes(self):
         self.sensitive_nodes = []
+
+    def find_sensitive_nodes_from(self, possible_sensitive_list: List[Signal]):
+        for node in [*possible_sensitive_list, *self.outputs]:
+            node_value = node.get_signal_value()
+            if node_value is None:
+                continue
+
+            transistors = node.transistor_adj.values()
+
+            for transistor in transistors:
+                bulk = transistor.get_bulk().get_signal_value()
+
+                if bulk != node_value and node.name not in self.sensitive_nodes:
+                    self.sensitive_nodes.append(node.name)
