@@ -39,8 +39,8 @@ class IdentifySensitiveNodes:
             for transistor in transistors:
                 bulk = transistor.get_bulk().get_signal_value()
 
-                if bulk != node_value and node.name not in self.sensitive_nodes:
-                    self.sensitive_nodes.append(node.name)
+                if bulk != node_value and node not in self.sensitive_nodes:
+                    self.sensitive_nodes.append(node)
 
     def reset_sensitive_nodes(self):
         self.sensitive_nodes = []

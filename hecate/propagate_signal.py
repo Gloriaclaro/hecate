@@ -13,18 +13,18 @@ class FindSignalsValue:
         self._signals_control = []
 
     def generate_output_values(self):
-        same_values = []
         for output in self.netlist.output_signals_list:
-            same_values.append(self.find_path_from_signal(output))
-        return all(same_values)
+            self.find_path_from_signal(output)
 
     def find_path_from_signal(self, signal: Signal):
         value, signals_list = self.find_signals_value(signal, [])
+        test_list = []
+
         self.set_signals_value(value, signals_list)
-        values = []
         for signal in signals_list:
-            values.append(signal.get_signal_value())
-        return all(values)
+            test_list.append(str(signal.get_signal_value()))
+        if not len(set(test_list)) == 1:
+            self.change_signal_value(signal, value)
 
     def find_signals_value(self, signal: Signal, signals_list: [Signal]):
         next_transistors: List[Transistor] = signal.transistor_adj.values()
@@ -82,6 +82,14 @@ class FindSignalsValue:
     def set_signals_value(self, value: int, signals_list: [Signal]):
         for signal in signals_list:
             signal.set_signal_value(value)
+
+    @staticmethod
+    def change_signal_value(signal: Signal, signal_value: [int, None]):
+        signal.reset_signal_value()
+        if signal_value == 0:
+            signal.set_signal_value(1)
+        elif signal_value == 1:
+            signal.set_signal_value(0)
 
     def reset(self):
         signals_to_reset = [
