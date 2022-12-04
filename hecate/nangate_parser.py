@@ -24,8 +24,8 @@ class NangateParser:
         self.library = path_concat(self.BASE_PATH, "circuits", "library", library)
         self.power = None
         self.gnd = None
-        self.pmos = "PMOS_VTL"
-        self.nmos = "NMOS_VTL"
+        self.pmos = "PMOS_VTL PMOS_VTH"
+        self.nmos = "NMOS_VTL NMOS_VTH NMOS_NT"
         self.logic_gates = {}
 
     def read_library(self):
@@ -164,7 +164,7 @@ class NangateParser:
             if description == 'G':
                 gnd = pin_name
 
-        # print(name, inputs, outputs, power, gnd)
+        print(name, inputs, outputs, power, gnd)
         self.power = power
         self.gnd = gnd
         self.logic_gates[name] = LogicGate(
@@ -185,4 +185,4 @@ def verilog_to_spice(name):
     parser.read_verilog_abc()
 
 if __name__ == '__main__':
-    verilog_to_spice()
+    verilog_to_spice('c432')

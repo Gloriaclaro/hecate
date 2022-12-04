@@ -42,7 +42,7 @@ class Hecate:
             output.write(f"Nome do arquivo avaliado: {self.circuit} \n")
             output.write(f"Quantidade de vetores testados: {self.evaluated_vectors} - {self.evaluated_vectors/self.total_vectors} \n")
             output.write(f'Node | #Vectors \n')
-            print(f'Node | #Vectors')
+            # print(f'Node | #Vectors')
             sensitive_nodes = []
             for vector in self.sensitive_nodes:
                 sensitive_nodes += vector.get('sensitive_nodes')
@@ -51,19 +51,19 @@ class Hecate:
             for node in nodes_set:
                 node_count.append((node, sensitive_nodes.count(node)))
             for node in sorted(node_count, key=lambda tup: tup[1], reverse=True):
-                print(f'{node[0]} | {node[1]}')
+                # print(f'{node[0]} | {node[1]}')
                 output.write(f'{node[0]} | {node[1]} \n')
 
     def critical_vectors(self):
         path = path_concat(self.BASE_PATH, "outputs", "critical_vectors", self.circuit + ".txt")
         with open(path, 'w') as output:
-            print(f'Vector | #Nodes count')
+            # print(f'Vector | #Nodes count')
             output.write(f'Vector | #Nodes count \n')
             sensitive_nodes = []
             for vector in self.sensitive_nodes:
                 sensitive_nodes.append((vector.get('vector'), len(vector.get('sensitive_nodes'))))
             for node in sorted(sensitive_nodes, key=lambda tup: tup[1], reverse=True):
-                print(f'{node[0]} | {node[1]}')
+                # print(f'{node[0]} | {node[1]}')
                 output.write(f'{node[0]} | {node[1]} \n')
 
     def sensitive_nodes_for_all_input_values(self, sample_size):
@@ -75,22 +75,30 @@ class Hecate:
         with open(path_concat(self.BASE_PATH, "outputs", self.circuit + ".txt"), 'w') as output:
             start = timeit.default_timer()
             output.write(f"Nome do arquivo avaliado: {self.circuit} \n")
-            output.write(
-                f"Quantidade de vetores testados: {self.evaluated_vectors} - {self.evaluated_vectors / self.total_vectors} \n")
-            output.write('vector | sensitive_node \n')
+            output.write(f"Quantidade de vetores testados: {self.evaluated_vectors} "
+                         f"- {self.evaluated_vectors / self.total_vectors} \n")
+            total_evaluated_nodes = len(self.netlist.intern_signals_list) + len(self.netlist.output_signals_list) + \
+                                     len(self.netlist.input_signals_list)
+            output.write(f"total_evaluated_nodes: {total_evaluated_nodes} \n")
+            output.write('vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime \n')
             for vector in vectors:
                 print(vector)
                 self.find_sensitive_node(vector, output)
+
             stop = timeit.default_timer()
             output.writelines(f'runtime: {stop - start}\n')
             print(f'runtime: {stop - start}')
 
     def find_sensitive_node(self, vector: dict, output):
+        start = timeit.default_timer()
+
         self.signal_path.generate_input_values(**vector)
         self.signal_path.generate_output_values()
         self.save_outputs_value()
         self.identify.find_all_sensitive_nodes()
         self.save_reverse_biased_nodes_value(self.identify.sensitive_nodes)
+        total_reverse_biased = len(self.identify.sensitive_nodes)
+        # print([node.name for node in self.identify.sensitive_nodes])
         sensitive_nodes = []
         for node in self.identify.sensitive_nodes:
             self.signal_path.reset()
@@ -98,11 +106,12 @@ class Hecate:
             if self.is_mask(node):
                 continue
             sensitive_nodes.append(node.name)
-        # self.identify.find_all_sensitive_nodes()
+        not_mask_reverse_biased = len(sensitive_nodes)
         str_vector = ''.join(str(val) for val in vector.values())
-        # print({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
+        stop = timeit.default_timer()
         self.sensitive_nodes.append({"vector": str_vector, "sensitive_nodes": sensitive_nodes})
-        output.write(str_vector + " | " + str(sensitive_nodes) + "\n")
+        output.write(str_vector + " | " + str(sensitive_nodes) + " | " + str(total_reverse_biased)
+                     + " | " + str(not_mask_reverse_biased) + " | " + str(stop - start) + "\n")
         self.identify.reset_sensitive_nodes()
         self.signal_path.reset()
 
@@ -113,8 +122,8 @@ class Hecate:
         )
         vector = inputs.get_input_vector(vector)
         start = timeit.default_timer()
-        print(f"Nome do arquivo avaliado: {self.circuit}")
-        print('vector | sensitive_node')
+        # print(f"Nome do arquivo avaliado: {self.circuit}")
+        # print('vector | sensitive_node')
 
         self.signal_path.generate_input_values(**vector)
         self.signal_path.generate_output_values()
@@ -122,19 +131,21 @@ class Hecate:
 
         self.identify.find_all_sensitive_nodes()
         self.save_reverse_biased_nodes_value(self.identify.sensitive_nodes)
+        total_reverse_biased = len(self.identify.sensitive_nodes)
         sensitive_nodes = []
+        self.signal_path.reset()
         for node in self.identify.sensitive_nodes:
             self.signal_path.reset()
             self.signal_path.generate_input_values(**vector)
             if self.is_mask(node):
                 continue
             sensitive_nodes.append(node.name)
-        # signals = self.node_is_mask(self.identify.sensitive_nodes, vector)
+        not_mask_reverse_biased = len(sensitive_nodes)
         str_vector = ''.join(str(val) for val in vector.values())
         print({"vector": str_vector, "sensitive_nodes": sensitive_nodes})
-        # self.sensitive_nodes.append({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
+        self.sensitive_nodes.append({"vector": str_vector, "sensitive_nodes": self.identify.sensitive_nodes})
         self.identify.reset_sensitive_nodes()
-        self.signal_path.reset()
+        # self.signal_path.reset()
 
         stop = timeit.default_timer()
         print(f'runtime: {stop - start}')
@@ -176,9 +187,12 @@ class Hecate:
 
 
 if __name__ == '__main__':
-    hecate = Hecate("c17")
-    hecate.sensitive_nodes_for_all_input_values(35)
-    # hecate.sensitive_nodes_for_a_vector("01000")
+    hecate = Hecate("c17_test")
+    # hecate.sensitive_nodes_for_all_input_values(33)
+
+    hecate.sensitive_nodes_for_a_vector("00000")
+    # hecate.critical_nodes()
+    # hecate.critical_vectors()
 
 # salvar as saídas e dos nodos internos
 # zerar o valor de todos (testar nodos reversamente polarizados)
@@ -192,3 +206,4 @@ Circuito
 total evaluated nodes
 vector - total_reverse_biased - not_mask_reverse_biased - runtime
 """
+

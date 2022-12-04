@@ -29,7 +29,6 @@ class IdentifySensitiveNodes:
 
     def find_all_sensitive_nodes(self):
         for node in [*self.possible_sensitive_nodes, *self.outputs, *self.inputs]:
-            # print(node.name,  node.get_signal_value())
             node_value = node.get_signal_value()
             if node_value is None:
                 continue

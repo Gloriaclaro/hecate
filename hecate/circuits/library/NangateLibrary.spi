@@ -807,14 +807,14 @@ M_i_5__m3 net_2 A2 ZN VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:29:49 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT BUF_X1 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT BUF_X1 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2 VSS A Z_neg VSS NMOS_VTL W=0.210000U L=0.050000U
 M_i_0 Z Z_neg VSS VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_3 VDD A Z_neg VDD PMOS_VTL W=0.315000U L=0.050000U
 M_i_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -827,8 +827,8 @@ M_i_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:29:14 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT BUF_X16 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT BUF_X16 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2_0 Z_neg A VSS VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_2_1 VSS A Z_neg VSS NMOS_VTL W=0.415000U L=0.050000U
@@ -878,7 +878,7 @@ M_i_1_12 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_13 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_14 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_15 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -891,8 +891,8 @@ M_i_1_15 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:29:48 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT BUF_X2 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT BUF_X2 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2 VSS A Z_neg VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_0_0_x2_0 Z Z_neg VSS VSS NMOS_VTL W=0.415000U L=0.050000U
@@ -900,7 +900,7 @@ M_i_0_0_x2_1 VSS Z_neg Z VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_3 VDD A Z_neg VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_0_x2_0 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_0_x2_1 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -913,8 +913,8 @@ M_i_1_0_x2_1 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:31:57 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT BUF_X32 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT BUF_X32 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2_0 Z_neg A VSS VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_2_1 VSS A Z_neg VSS NMOS_VTL W=0.415000U L=0.050000U
@@ -1012,7 +1012,7 @@ M_i_1_28 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_29 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_30 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_31 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -1025,8 +1025,8 @@ M_i_1_31 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:29:14 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT BUF_X4 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT BUF_X4 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2_0 Z_neg A VSS VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_2_1 VSS A Z_neg VSS NMOS_VTL W=0.415000U L=0.050000U
@@ -1040,7 +1040,7 @@ M_i_1_0 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_1 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_2 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_3 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -1053,8 +1053,8 @@ M_i_1_3 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:28:36 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT BUF_X8 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT BUF_X8 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2_0 Z_neg A VSS VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_2_1 VSS A Z_neg VSS NMOS_VTL W=0.415000U L=0.050000U
@@ -1080,7 +1080,7 @@ M_i_1_4 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_5 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_6 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_7 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -1093,14 +1093,14 @@ M_i_1_7 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:27:46 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT CLKBUF_X1 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT CLKBUF_X1 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2 VSS A Z_neg VSS NMOS_VTL W=0.095000U L=0.050000U
 M_i_0 Z Z_neg VSS VSS NMOS_VTL W=0.195000U L=0.050000U
 M_i_3 VDD A Z_neg VDD PMOS_VTL W=0.315000U L=0.050000U
 M_i_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -1113,8 +1113,8 @@ M_i_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:27:41 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT CLKBUF_X2 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT CLKBUF_X2 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2 VSS A Z_neg VSS NMOS_VTL W=0.195000U L=0.050000U
 M_i_0_0 Z Z_neg VSS VSS NMOS_VTL W=0.195000U L=0.050000U
@@ -1122,7 +1122,7 @@ M_i_0_1 VSS Z_neg Z VSS NMOS_VTL W=0.195000U L=0.050000U
 M_i_3 VDD A Z_neg VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_0 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_1 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -1135,8 +1135,8 @@ M_i_1_1 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:27:23 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT CLKBUF_X3 A Z VDD VSS 
-*.PININFO A:I Z:O VDD:P VSS:G 
+.SUBCKT CLKBUF_X3 A Z VDD VSS
+*.PININFO A:I Z:O VDD:P VSS:G
 *.EQN Z=A
 M_i_2_1 VSS A Z_neg VSS NMOS_VTL W=0.195000U L=0.050000U
 M_i_0_0 Z Z_neg VSS VSS NMOS_VTL W=0.195000U L=0.050000U
@@ -1146,7 +1146,7 @@ M_i_3_1 VDD A Z_neg VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_0 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_1 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_2 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -2485,8 +2485,8 @@ M_p_tran_2 VDD A Z VDD PMOS_VTL W=0.135000U L=0.050000U
 * at 19:17:01 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT MUX2_X1 A B S Z VDD VSS 
-*.PININFO A:I B:I S:I Z:O VDD:P VSS:G 
+.SUBCKT MUX2_X1 A B S Z VDD VSS
+*.PININFO A:I B:I S:I Z:O VDD:P VSS:G
 *.EQN Z=((S * B) + (A * !S))
 M_i_10 VSS S x1 VSS NMOS_VTL W=0.210000U L=0.050000U
 M_i_4 net_1 A VSS VSS NMOS_VTL W=0.210000U L=0.050000U
@@ -2500,7 +2500,7 @@ M_i_6 net_2 S Z_neg VDD PMOS_VTL W=0.315000U L=0.050000U
 M_i_9 net_3 x1 Z_neg VDD PMOS_VTL W=0.315000U L=0.050000U
 M_i_7 VDD B net_3 VDD PMOS_VTL W=0.315000U L=0.050000U
 M_i_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *
@@ -2513,8 +2513,8 @@ M_i_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 * at 19:16:57 on Fri, 3 Dec 2010.                                              *
 *                                                                              *
 ********************************************************************************
-.SUBCKT MUX2_X2 A B S Z VDD VSS 
-*.PININFO A:I B:I S:I Z:O VDD:P VSS:G 
+.SUBCKT MUX2_X2 A B S Z VDD VSS
+*.PININFO A:I B:I S:I Z:O VDD:P VSS:G
 *.EQN Z=((S * B) + (A * !S))
 M_i_4 net_1 A Z_neg VSS NMOS_VTL W=0.415000U L=0.050000U
 M_i_5 VSS x1 net_1 VSS NMOS_VTL W=0.415000U L=0.050000U
@@ -2530,7 +2530,7 @@ M_i_6 net_2 S Z_neg VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_0 VDD Z_neg Z VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_1_1 Z Z_neg VDD VDD PMOS_VTL W=0.630000U L=0.050000U
 M_i_11 VDD S x1 VDD PMOS_VTL W=0.315000U L=0.050000U
-.ENDS 
+.ENDS
 
 ********************************************************************************
 *                                                                              *

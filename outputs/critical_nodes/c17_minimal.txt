@@ -1,0 +1,16 @@
+Nome do arquivo avaliado: c17_minimal 
+Quantidade de vetores testados: 32 - 1.0 
+Node | #Vectors 
+n18 | 32 
+23 | 32 
+22 | 32 
+n14 | 32 
+n13 | 30 
+n12 | 24 
+n10 | 22 
+n17 | 20 
+n9 | 20 
+n8 | 18 
+n7 | 12 
+n11 | 12 
+n16 | 12 

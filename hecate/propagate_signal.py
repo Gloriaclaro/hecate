@@ -10,20 +10,28 @@ class FindSignalsValue:
         self.transistors_stack = []
         self.signals_control = []
         self.transistors_list_test = []
-        self._signals_control = []
+        self.already_search = []
 
     def generate_output_values(self):
         for output in self.netlist.output_signals_list:
+            self.already_search = []
             self.find_path_from_signal(output)
 
     def find_path_from_signal(self, signal: Signal):
+        if signal in self.already_search:
+            return
+        self.already_search.append(signal)
         value, signals_list = self.find_signals_value(signal, [])
-        test_list = []
-
         self.set_signals_value(value, signals_list)
-        for signal in signals_list:
-            test_list.append(str(signal.get_signal_value()))
-        if not len(set(test_list)) == 1:
+        signals_value_list = []
+
+        for sig in signals_list:
+            signals_value_list.append(str(sig.get_signal_value()))
+
+        if not signals_value_list:
+            return
+
+        if not (len(set(signals_value_list)) == 1):
             self.change_signal_value(signal, value)
 
     def find_signals_value(self, signal: Signal, signals_list: [Signal]):
@@ -71,15 +79,16 @@ class FindSignalsValue:
         gate_value = gate.get_signal_value()
         there_is_a_path = False
         transistor_type = transistor.get_type()
-        if transistor_type == self.netlist.pmos and gate_value == 0:
+        if transistor_type in self.netlist.pmos and gate_value == 0:
             there_is_a_path = True
 
-        if transistor_type == self.netlist.nmos and gate_value == 1:
+        if transistor_type in self.netlist.nmos and gate_value == 1:
             there_is_a_path = True
 
         return there_is_a_path
 
-    def set_signals_value(self, value: int, signals_list: [Signal]):
+    @staticmethod
+    def set_signals_value(value: int, signals_list: [Signal]):
         for signal in signals_list:
             signal.set_signal_value(value)
 

@@ -8,8 +8,8 @@ N11 | 24
 N10 | 20 
 N19 | 20 
 net_0_NAND2_5 | 10 
-net_0_NAND2_6 | 6 
 net_0_NAND2_4 | 6 
 net_0_NAND2_2 | 6 
-net_0_NAND2_3 | 4 
+net_0_NAND2_6 | 6 
 net_0_NAND2_1 | 4 
+net_0_NAND2_3 | 4 

@@ -1,0 +1,3 @@
+Nome do arquivo avaliado: c432_minimal 
+Quantidade de vetores testados: 50 - 7.275957614183426e-10 
+Node | #Vectors 

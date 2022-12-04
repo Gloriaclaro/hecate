@@ -1,0 +1,3 @@
+Nome do arquivo avaliado: c17_v2 
+Quantidade de vetores testados: 32 - 1.0 
+Node | #Vectors 

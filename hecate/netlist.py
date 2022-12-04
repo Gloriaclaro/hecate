@@ -19,8 +19,8 @@ class Netlist:
 
     def __init__(self,  file_name: str):
         self.file_path = path_concat(self.BASE_PATH, "circuits", "spice", file_name)
-        self.pmos: str = None
-        self.nmos: str = None
+        self.pmos = []
+        self.nmos = []
         self.transistors = {}
         self.signals = {}
         self.input_signals_list = []
@@ -73,10 +73,10 @@ class Netlist:
                     self.output_signals_list.append(signal)
 
             if "P-Type" in description:
-                self.pmos = names[0]
+                self.pmos = names
 
             if "N-Type" in description:
-                self.nmos = names[0]
+                self.nmos = names
 
     def create_signal(self, name: str):
         signal = Signal(name)
@@ -101,9 +101,9 @@ class Netlist:
             self.transistors[name] = transistor
 
     def set_bulk_value(self, bulk: Signal, transistor_type: str):
-        if transistor_type == self.pmos:
+        if transistor_type in self.pmos:
             bulk.set_signal_value(1)
-        if transistor_type == self.nmos:
+        if transistor_type in self.nmos:
             bulk.set_signal_value(0)
 
     def get_or_create_signal(self, signals_name: list, transistor_name: str):

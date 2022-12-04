@@ -1,0 +1,16 @@
+Nome do arquivo avaliado: c17_test 
+Quantidade de vetores testados: 32 - 1.0 
+Node | #Vectors 
+22 | 32 
+23 | 32 
+n9 | 24 
+ZN_neg_g2 | 24 
+n7 | 22 
+n8 | 20 
+n11 | 12 
+net_1_g3 | 10 
+net_0_g2 | 6 
+net_0_g1 | 6 
+net_1_g5 | 6 
+net_0_g5 | 6 
+net_0_g3 | 6 

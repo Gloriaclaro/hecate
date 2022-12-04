@@ -1,12 +1,6 @@
 Nome do arquivo avaliado: aoi_inv 
-Quantidade de vetores testados: 8 - 1.0 
-vector | sensitive_node 
-000 | ['N7']
-001 | ['N4', 'N5', 'N7']
-010 | ['N6', 'net_1_AOI21_1', 'N7']
-011 | ['N5', 'N6', 'N7']
-100 | ['N6', 'net_1_AOI21_1', 'N7']
-101 | ['N4', 'N6', 'net_0_AOI21_1', 'N7']
-110 | ['N6', 'net_1_AOI21_1', 'N7']
-111 | ['N6', 'N7']
-runtime: 0.0009750000000000036
+Quantidade de vetores testados: 1 - 0.125 
+total_evaluated_nodes: 9 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+000 | ['N7'] | 4 | 1 | 0.00043999999999999595
+runtime: 0.0005462999999999996
