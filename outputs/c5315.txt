@@ -1,4 +1,0 @@
-Nome do arquivo avaliado: c5315 
-Quantidade de vetores testados: 100 - 2.6101217871994098e-52 
-total_evaluated_nodes: 3080 
-vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 

@@ -1,0 +1,9 @@
+Nome do arquivo avaliado: v7.txt 
+Quantidade de vetores testados: 4 - 1.0 
+total_evaluated_nodes: 8 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+00 | [] | 1 | 0 | 0.00010479999999998824
+01 | ['scbn', 'n', 's'] | 3 | 3 | 0.00021059999999997747
+10 | [] | 2 | 0 | 6.079999999999974e-05
+11 | ['n', 's'] | 3 | 2 | 9.059999999999624e-05
+runtime: 0.0005412000000000194

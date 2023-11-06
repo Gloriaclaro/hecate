@@ -1,0 +1,27 @@
+.supply vdd
+.ground gnd
+.P-Type PMOS
+.N-Type NMOS
+.inputs select a b
+.outputs out
+
+Mp0 vdd select n1 vdd PMOS w=140n l=32n
+Mn0 gnd select n1 gnd NMOS w=70n l=32n
+Mp1 vdd n1 x1 vdd PMOS w=140n l=32n
+Mp2 vdd a x1 vdd PMOS w=140n l=32n
+Mn1 x1 n1 n2 gnd NMOS w=140n l=32n
+Mn2 n2 a gnd gnd NMOS w=140n l=32n
+Mp3 vdd x1 x2 vdd PMOS w=140n l=32n
+Mn3 x2 x1 gnd gnd NMOS w=70n l=32n
+Mp4 vdd select y1 vdd PMOS w=140n l=32n
+Mp5 vdd b y1 vdd PMOS w=140n l=32n
+Mn4 y1 select n3 gnd NMOS w=140n l=32n
+Mn5 n3 b gnd gnd NMOS w=140n l=32n
+Mp6 vdd y1 y2 vdd PMOS w=140n l=32n
+Mn6 y2 y1 gnd gnd NMOS w=70n  l=32n
+Mp7 vdd x2 n4 vdd PMOS w=280n l=32n
+Mp8 n4 y2 z vdd PMOS w=280n l=32n
+Mn7 z x2 gnd gnd NMOS w=70n  l=32n
+Mn8 z y2 gnd gnd NMOS w=70n  l=32n
+Mp9 vdd z out vdd PMOS w=140n l=32n
+Mn9 out z gnd gnd NMOS w=70n  l=32n

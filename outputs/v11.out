@@ -1,0 +1,9 @@
+Nome do arquivo avaliado: v11.txt 
+Quantidade de vetores testados: 4 - 1.0 
+total_evaluated_nodes: 6 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+00 | ['bn', 'n1', 'n2', 's'] | 5 | 4 | 0.00018160000000000398
+01 | ['bn', 'n2', 's'] | 4 | 3 | 0.00010509999999999686
+10 | ['bn', 'n1', 'n2', 's'] | 5 | 4 | 0.00014649999999999386
+11 | ['bn', 'n2', 's'] | 4 | 3 | 0.00010219999999999674
+runtime: 0.0006033000000000011

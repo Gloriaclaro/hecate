@@ -37,6 +37,11 @@ class Hecate:
                     output.write(vector.get('vector') + '\n')
 
     def critical_nodes(self):
+        """Descobrimos em quais nodos devemos aplicar o selective hardening
+             Avaliar o impacto do hardening seletivo
+                -> fortalecer parte do circuito e verificar se o numero de nodos diminui
+            A menor média é um circuito melhor (mais robusto/menos sensível)?
+        """
         path = path_concat(self.BASE_PATH, "outputs", "critical_nodes", self.circuit + ".txt")
         with open(path, 'w') as output:
             output.write(f"Nome do arquivo avaliado: {self.circuit} \n")
@@ -55,6 +60,11 @@ class Hecate:
                 output.write(f'{node[0]} | {node[1]} \n')
 
     def critical_vectors(self):
+        """Identificamos o vetor crítico
+            Comparar diferentes topologias de circuito em relação ao vetor de entrada
+            Avaliar o impacto do hardening seletivo
+                -> fortalecer parte do circuito e verificar se o numero de nodos diminui
+            A menor média é um circuito melhor (mais robusto/menos sensível)?"""
         path = path_concat(self.BASE_PATH, "outputs", "critical_vectors", self.circuit + ".txt")
         with open(path, 'w') as output:
             # print(f'Vector | #Nodes count')
@@ -72,7 +82,7 @@ class Hecate:
             inputs=self.netlist.input_signals_list
         )
         vectors, self.total_vectors, self.evaluated_vectors = inputs.get_all_input_vectors(int(sample_size))
-        with open(path_concat(self.BASE_PATH, "outputs", self.circuit + ".txt"), 'w') as output:
+        with open(path_concat(self.BASE_PATH, "outputs", self.circuit[:-4] + ".out"), 'w') as output:
             start = timeit.default_timer()
             output.write(f"Nome do arquivo avaliado: {self.circuit} \n")
             output.write(f"Quantidade de vetores testados: {self.evaluated_vectors} "
@@ -122,8 +132,8 @@ class Hecate:
         )
         vector = inputs.get_input_vector(vector)
         start = timeit.default_timer()
-        # print(f"Nome do arquivo avaliado: {self.circuit}")
-        # print('vector | sensitive_node')
+        print(f"Nome do arquivo avaliado: {self.circuit}")
+        print('vector | sensitive_node')
 
         self.signal_path.generate_input_values(**vector)
         self.signal_path.generate_output_values()
@@ -187,12 +197,12 @@ class Hecate:
 
 
 if __name__ == '__main__':
-    hecate = Hecate("c17_test")
-    # hecate.sensitive_nodes_for_all_input_values(33)
+    hecate = Hecate(f"testC17_nangate")
+    hecate.sensitive_nodes_for_all_input_values(1)
 
-    hecate.sensitive_nodes_for_a_vector("00000")
-    # hecate.critical_nodes()
-    # hecate.critical_vectors()
+    # hecate.sensitive_nodes_for_a_vector("00000")
+    hecate.critical_nodes()
+    hecate.critical_vectors()
 
 # salvar as saídas e dos nodos internos
 # zerar o valor de todos (testar nodos reversamente polarizados)

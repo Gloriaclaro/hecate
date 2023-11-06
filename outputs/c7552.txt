@@ -1,4 +1,0 @@
-Nome do arquivo avaliado: c7552 
-Quantidade de vetores testados: 100 - 4.861730685829017e-61 
-total_evaluated_nodes: 42881
-vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 

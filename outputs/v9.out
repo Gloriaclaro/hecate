@@ -1,0 +1,9 @@
+Nome do arquivo avaliado: v9.txt 
+Quantidade de vetores testados: 4 - 1.0 
+total_evaluated_nodes: 5 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+00 | ['n1', 'n2', 's'] | 4 | 3 | 0.00014420000000001099
+01 | ['n2', 's'] | 4 | 2 | 0.00010050000000000336
+10 | ['n1', 'n2', 's'] | 5 | 3 | 0.00017059999999999298
+11 | ['n2', 's'] | 5 | 2 | 0.00012759999999997773
+runtime: 0.0006153999999999882

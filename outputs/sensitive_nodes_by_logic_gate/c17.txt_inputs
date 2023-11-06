@@ -1,0 +1,5 @@
+,logic_gate,unique,max
+0,NAND2_3,[24],24
+1,NAND2_4,[24],24
+2,NAND2_5,[30 20],30
+3,NAND2_6,[30 20],30

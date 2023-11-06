@@ -1,0 +1,13 @@
+.supply vdd
+.ground gnd
+.P-Type PMOS
+.N-Type NMOS
+.inputs select a b
+.outputs out
+
+Mp0 vdd select n1 vdd PMOS w=140n l=32n
+Mn0 n1 select gnd gnd NMOS w=70n  l=32n
+Mp1 a select out vdd PMOS w=140n l=32n
+Mn1 a n1 out gnd NMOS w=70n  l=32n
+Mp2 b n1 out vdd PMOS w=140n l=32n
+Mn2 b select out gnd NMOS w=70n  l=32n

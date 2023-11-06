@@ -1,0 +1,13 @@
+Nome do arquivo avaliado: MUX_PTL_GLORIA.cir 
+Quantidade de vetores testados: 8 - 1.0 
+total_evaluated_nodes: 4 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+000 | [] | 1 | 0 | 5.78000000000245e-05
+001 | [] | 2 | 0 | 2.3099999999998122e-05
+010 | [] | 1 | 0 | 1.3900000000011126e-05
+011 | [] | 2 | 0 | 1.8000000000018e-05
+100 | [] | 1 | 0 | 1.8400000000001748e-05
+101 | ['out'] | 3 | 1 | 2.889999999999837e-05
+110 | [] | 1 | 0 | 1.5399999999998748e-05
+111 | ['out'] | 3 | 1 | 2.8000000000000247e-05
+runtime: 0.00032840000000000646

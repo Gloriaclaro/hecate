@@ -1,0 +1,11 @@
+,percentage,selected_gates,difference,max_sum_total_vectors_for_selected_gates,max_sum_total_vectors_remaining_gates,deep_fanout_total_vectors_for_selected_gates,deep_fanout_total_vectors_remaining_gates
+0,0.1,18,0,5400,16135,5400,16135
+1,0.2,35,0,10387,11148,10387,11148
+2,0.3,52,0,14829,6706,14829,6706
+3,0.4,69,132,17945,3590,17813,3722
+4,0.5,86,665,18784,2751,18119,3416
+5,0.6,104,588,19529,2006,18941,2594
+6,0.7,121,716,20197,1338,19481,2054
+7,0.8,138,560,20792,743,20232,1303
+8,0.9,155,384,21245,290,20861,674
+9,1.0,172,0,21535,0,21535,0

@@ -1,0 +1,17 @@
+.supply vcc
+.ground gnd
+.P-Type PMOS
+.N-Type NMOS
+.inputs sca scb
+.outputs s
+
+Mp1	vcc	scb	n1	vcc	PMOS  w=210n  L=32n
+Mp2	sca	n1	n2	vcc	PMOS  w=105n  L=32n
+Mp3	n1	sca	n2	vcc	PMOS  w=210n  L=32n
+Mp4	vcc	n2	s	vcc	PMOS  w=105n  L=32n
+
+Mn1	n1	scb	gnd	gnd	NMOS  w=140n  L=32n
+Mn2	sca	scb	n2	gnd	NMOS  w=70n  L=32n
+Mn3	scb	sca	n2	gnd	NMOS  w=70n  L=32n
+Mn4	s	n2	gnd	gnd	NMOS  w=70n  L=32n
+

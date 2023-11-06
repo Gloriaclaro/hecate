@@ -1,0 +1,9 @@
+Nome do arquivo avaliado: v10.txt 
+Quantidade de vetores testados: 4 - 1.0 
+total_evaluated_nodes: 6 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+00 | ['n2', 's'] | 3 | 2 | 0.00015249999999999986
+01 | ['n2', 's'] | 3 | 2 | 7.849999999998136e-05
+10 | ['n1', 'n2', 's'] | 5 | 3 | 0.00013899999999997248
+11 | ['n2', 's'] | 4 | 2 | 8.299999999999974e-05
+runtime: 0.0005488999999999911

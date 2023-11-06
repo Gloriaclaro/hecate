@@ -1,0 +1,13 @@
+Nome do arquivo avaliado: MUX_AND_GLORIA.cir 
+Quantidade de vetores testados: 8 - 1.0 
+total_evaluated_nodes: 13 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+000 | ['x1', 'n2', 'x2', 'y1', 'y2', 'z', 'out'] | 8 | 7 | 0.0004280999999999868
+001 | ['x1', 'n2', 'x2', 'y1', 'y2', 'z', 'out'] | 8 | 7 | 0.00038810000000000233
+010 | ['n1', 'x1', 'x2', 'n4', 'z', 'out'] | 8 | 6 | 0.0004080999999999946
+011 | ['n1', 'x1', 'x2', 'n4', 'z', 'out'] | 8 | 6 | 0.0003817999999999877
+100 | ['x1', 'x2', 'y1', 'n3', 'y2', 'z', 'out'] | 8 | 7 | 0.0003903000000000101
+101 | ['y1', 'y2', 'z', 'out'] | 7 | 4 | 0.0003273999999999777
+110 | ['n1', 'x1', 'x2', 'y1', 'n3', 'y2', 'z', 'out'] | 8 | 8 | 0.0003864999999999841
+111 | ['y1', 'y2', 'z', 'out'] | 7 | 4 | 0.0003242999999999996
+runtime: 0.003182400000000002

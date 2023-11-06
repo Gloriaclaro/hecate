@@ -1,0 +1,13 @@
+Nome do arquivo avaliado: MUX_CMOS_GLORIA.cir 
+Quantidade de vetores testados: 8 - 1.0 
+total_evaluated_nodes: 9 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+000 | ['n5', 'n3', 'out'] | 4 | 3 | 0.0003076999999999941
+001 | ['n5', 'n3', 'n4', 'out'] | 5 | 4 | 0.0003690000000000082
+010 | ['n1', 'n5', 'out'] | 3 | 3 | 0.00016160000000001173
+011 | ['n1', 'n5', 'out'] | 3 | 3 | 0.00018180000000000973
+100 | ['n5', 'out'] | 3 | 2 | 0.00018120000000002023
+101 | ['n2', 'n5', 'out'] | 4 | 3 | 0.00028319999999998346
+110 | ['n1', 'n5', 'out'] | 3 | 3 | 0.00017679999999997698
+111 | ['n2', 'n5', 'out'] | 4 | 3 | 0.00026480000000000947
+runtime: 0.0021679000000000004

@@ -1,0 +1,10 @@
+.supply vdd
+.ground gnd
+.P-Type PMOS
+.N-Type NMOS
+.inputs select a b
+.outputs out
+
+* Declarando o circuito
+Mp0	a select out vdd PMOS w=140n l=32n
+Mn0 b select out gnd NMOS w=70n l=32n

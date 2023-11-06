@@ -1,0 +1,13 @@
+Nome do arquivo avaliado: MUX_NAND_GLORIA.cir 
+Quantidade de vetores testados: 8 - 1.0 
+total_evaluated_nodes: 10 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+000 | ['x1', 'n2', 'x2', 'out'] | 5 | 4 | 0.0002466999999999886
+001 | ['x1', 'n2', 'x2', 'out'] | 5 | 4 | 0.00019820000000000948
+010 | ['n1', 'x1', 'out'] | 4 | 3 | 0.00014699999999998048
+011 | ['n1', 'x1', 'out'] | 4 | 3 | 0.00014259999999999273
+100 | ['x1', 'x2', 'n3', 'out'] | 5 | 4 | 0.00019539999999998447
+101 | ['x2', 'n4', 'out'] | 5 | 3 | 0.0003589999999999982
+110 | ['n1', 'x1', 'x2', 'n3', 'out'] | 5 | 5 | 0.00019799999999997597
+111 | ['x2', 'n4', 'out'] | 5 | 3 | 0.00018580000000001373
+runtime: 0.0018457000000000057

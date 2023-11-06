@@ -16,10 +16,11 @@ class GenerateInputs:
 
     def get_all_input_vectors(self, sample_size: int) -> tuple:
         length = len(self._inputs)
-        if 2**length < sample_size:
-            vectors = self.get_seq_input_vectors(sample_size)
-        else:
-            vectors = self.get_random_input_vectors(sample_size)
+        # if 2**length < sample_size:
+        # vectors = self.get_seq_input_vectors(sample_size)
+        vectors = self.get_seq_input_vectors(2**length)
+        # else:
+        #     vectors = self.get_random_input_vectors(sample_size)
         return vectors,  2 ** length, len(vectors)
 
     def get_seq_input_vectors(self, sample_size: int) -> list:

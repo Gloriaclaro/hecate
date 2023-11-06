@@ -85,7 +85,7 @@ class Netlist:
 
     def _create_transistors(self, transistors_list: list):
         for line in transistors_list:
-            transistor_info = line.strip().split(" ")
+            transistor_info = line.strip().split()
             if len(transistor_info) < 5:
                 continue
             name = transistor_info[self.TRANSISTOR_NAME]

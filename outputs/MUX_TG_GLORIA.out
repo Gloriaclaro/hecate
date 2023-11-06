@@ -1,0 +1,13 @@
+Nome do arquivo avaliado: MUX_TG_GLORIA.cir 
+Quantidade de vetores testados: 8 - 1.0 
+total_evaluated_nodes: 5 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+000 | ['out'] | 4 | 1 | 0.00010850000000001137
+001 | ['n1', 'out'] | 4 | 2 | 7.649999999997936e-05
+010 | ['n1', 'out'] | 4 | 2 | 7.450000000000512e-05
+011 | ['out'] | 4 | 1 | 7.299999999998974e-05
+100 | ['out'] | 4 | 1 | 7.429999999999937e-05
+101 | ['out'] | 4 | 1 | 9.370000000000211e-05
+110 | ['out'] | 4 | 1 | 0.00010419999999999874
+111 | ['out'] | 4 | 1 | 0.00011490000000000111
+runtime: 0.000854699999999986

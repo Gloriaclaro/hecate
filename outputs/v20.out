@@ -1,0 +1,9 @@
+Nome do arquivo avaliado: v20.txt 
+Quantidade de vetores testados: 4 - 1.0 
+total_evaluated_nodes: 6 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+00 | ['n1', 'n2', 's'] | 3 | 3 | 0.0001608999999999916
+01 | ['n1', 's'] | 3 | 2 | 0.00014500000000000624
+10 | ['n2', 'n3', 's'] | 4 | 3 | 0.00028169999999999584
+11 | ['n1', 'n2', 's'] | 3 | 3 | 0.00015919999999999823
+runtime: 0.0008317000000000185
