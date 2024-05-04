@@ -1,0 +1,10 @@
+Nome do arquivo avaliado: schvittz 
+Quantidade de vetores testados: 8 - 1.0 
+Node | #Vectors 
+out | 8 
+n3 | 4 
+n2 | 4 
+n1 | 3 
+n6 | 2 
+n4 | 1 
+n5 | 1 

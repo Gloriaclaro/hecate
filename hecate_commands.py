@@ -197,7 +197,7 @@ class Hecate:
 
 
 if __name__ == '__main__':
-    hecate = Hecate(f"testC17_nangate")
+    hecate = Hecate(f"schvittz")
     hecate.sensitive_nodes_for_all_input_values(1)
 
     # hecate.sensitive_nodes_for_a_vector("00000")

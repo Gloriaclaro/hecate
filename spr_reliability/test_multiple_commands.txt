@@ -1,0 +1,3 @@
+java -jar Crest-D.jar c17_from_bench_AIG_SIMULATED.v asap7_RVT_TT_ccs_ABC.genlib AIG_custom_lib.txt
+java -jar Crest-D.jar c17_from_bench_AIG_SIMULATED.v asap7_RVT_TT_ccs_ABC.genlib AIG_custom_lib.txt
+java -jar Crest-D.jar c17_from_bench_AIG_SIMULATED.v asap7_RVT_TT_ccs_ABC.genlib AIG_custom_lib.txt

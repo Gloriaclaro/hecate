@@ -1,7 +1,7 @@
 logic_gate nodes
-NAND2_1 net_0_NAND2_1,N10
-NAND2_2 net_0_NAND2_2,N11
-NAND2_3 net_0_NAND2_3,N16
-NAND2_4 net_0_NAND2_4,N19
-NAND2_5 net_0_NAND2_5,N22
-NAND2_6 net_0_NAND2_6,N23
+g0 n7
+g1 n8,net_0_g1
+g2 n9,net_0_g2,ZN_neg_g2
+g3 22,net_0_g3,net_1_g3
+g4 n11
+g5 23,net_0_g5,net_1_g5

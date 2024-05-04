@@ -1,0 +1,11 @@
+,percentage,selected_gates,gates_max,gates_sum,gates_deep_fanout,deep_fanout_difference,max_sum_difference,sum_total_vectors_for_selected_gates,sum_total_vectors_remaining_gates,max_sum_total_vectors_for_selected_gates,max_sum_total_vectors_remaining_gates,deep_fanout_total_vectors_for_selected_gates,deep_fanout_total_vectors_remaining_gates
+0,0.1,1,['NAND2_5'],['NAND2_5'],['NAND2_5'],42,0,42,152,42,152,0,0
+1,0.2,2,['NAND2_5' 'NAND2_6'],['NAND2_5' 'NAND2_6'],['NAND2_5' 'NAND2_6'],80,0,80,114,80,114,0,0
+2,0.3,2,['NAND2_5' 'NAND2_6'],['NAND2_5' 'NAND2_6'],['NAND2_5' 'NAND2_6'],80,0,80,114,80,114,0,0
+3,0.4,3,['NAND2_5' 'NAND2_6' 'NAND2_3'],['NAND2_5' 'NAND2_6' 'NAND2_3'],['NAND2_5' 'NAND2_6' 'NAND2_3'],114,0,114,80,114,80,0,0
+4,0.5,3,['NAND2_5' 'NAND2_6' 'NAND2_3'],['NAND2_5' 'NAND2_6' 'NAND2_3'],['NAND2_5' 'NAND2_6' 'NAND2_3'],114,0,114,80,114,80,0,0
+5,0.6,4,['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_4'],144,0,144,50,144,50,0,0
+6,0.7,5,['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_4' 'NAND2_1'],170,0,170,24,170,24,0,0
+7,0.8,5,['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_4' 'NAND2_1'],170,0,170,24,170,24,0,0
+8,0.9,6,['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4' 'NAND2_1'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4' 'NAND2_1'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_4' 'NAND2_1' 'NAND2_2'],194,0,194,0,194,0,0,0
+9,1.0,6,['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4' 'NAND2_1'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_2' 'NAND2_4' 'NAND2_1'],['NAND2_5' 'NAND2_6' 'NAND2_3' 'NAND2_4' 'NAND2_1' 'NAND2_2'],194,0,194,0,194,0,0,0

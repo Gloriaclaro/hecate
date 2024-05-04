@@ -10,9 +10,9 @@ class GenerateResults:
     BASE_PATH = Path(__file__).parent
 
     def __init__(self, file_name: str):
-        self.critical_nodes_path = path_concat(self.BASE_PATH, "outputs", "temp", "100", "critical_nodes")
-        self.critical_vectors_path = path_concat(self.BASE_PATH, "outputs", "temp", "100", "critical_vectors")
-        self.full_result_path_100 = path_concat(self.BASE_PATH, "outputs", "temp", "100")
+        self.critical_nodes_path = path_concat(self.BASE_PATH, "outputs", "temp", "400", "critical_nodes")
+        self.critical_vectors_path = path_concat(self.BASE_PATH, "outputs", "temp", "400", "critical_vectors")
+        self.full_result_path_100 = path_concat(self.BASE_PATH, "outputs", "temp", "400")
         self.full_result_path_400 = path_concat(self.BASE_PATH, "outputs", "temp", "400")
         self.logic_gates_path = path_concat(self.BASE_PATH, "hecate", "circuits", "logic_gate")
         self.vectors_average = 0
@@ -116,7 +116,8 @@ class GenerateResults:
 
         return logic_gates_node_map
 
-    def get_vectors_by_deep_and_fanout(self, circuit: str) -> list:
+    @staticmethod
+    def get_vectors_by_deep_and_fanout(circuit: str) -> list:
         logic_gate_features = []
         lgf = LogicGateFeatures(circuit=circuit.replace('.txt', ''))
         lgf.get_circuit_logic_gates()
@@ -137,6 +138,7 @@ class GenerateResults:
         logic_gates = self.get_circuit_logic_gates(circuit.replace('.txt', ''))
         for critical_node in critical_nodes.keys():
             for logic_gate in logic_gates.keys():
+                #TODO get all gates
                 if critical_node in logic_gates[logic_gate]:
                     logic_gate_critical_nodes.append(
                         {"logic_gate": logic_gate,
@@ -149,39 +151,52 @@ class GenerateResults:
         return sum_max_vectors_by_gate
 
     def get_logic_gate_critical_nodes(self):
-        for circuit in ['c432.txt', 'c499.txt', 'c880.txt', 'c1355.txt', 'c1908.txt',
-                         'c3540.txt', 'c5315.txt', 'c6288.txt', 'c7552.txt']:
-            print(circuit)
-            sum_max_vectors_by_gate = self.get_vectors_by_max_and_sum_of_vectors(circuit)
+        for circuit in ['c432', 'c499', 'c880', 'c1355', 'c1908', 'c3540', 'c5315', 'c6288', 'c7552']:
+            sum_max_vectors_by_gate = self.get_vectors_by_max_and_sum_of_vectors(circuit + ".txt")
 
             sum_max_vectors_by_gate.sort_values(['max', 'sum-max'], ascending=False, inplace=True)
             total = sum_max_vectors_by_gate['sum'].sum()
 
-            logic_gate_features = self.get_vectors_by_deep_and_fanout(circuit)
+            logic_gate_features = self.get_vectors_by_deep_and_fanout(circuit + ".txt")
             features_df = pd.DataFrame(logic_gate_features)
             resulted_df = pd.merge(sum_max_vectors_by_gate, features_df, on='logic_gate')
 
             resulted_df.sort_values(['Deep', 'Fanouts'], ascending=False, inplace=True)
+            sum_vectors_by_gate = sum_max_vectors_by_gate.sort_values(['sum'], ascending=False)
 
             n_gates = len(sum_max_vectors_by_gate)
             selective_hardening_output = {
-                "circuit": circuit,
+                "circuit": circuit + ".txt",
                 "total": total,
                 "results": []
             }
             for percentage in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]:
                 selected_gates_number = math.ceil(n_gates*percentage)
-
+                if percentage == 1:
+                    print(circuit, percentage, selected_gates_number)
                 total_selected = sum_max_vectors_by_gate.head(selected_gates_number)['sum'].sum()
                 deep_fanouts_total_selected = resulted_df.head(selected_gates_number)['sum'].sum()
+                sum_total_selected = sum_vectors_by_gate.head(selected_gates_number)['sum'].sum()
 
                 total_remaining = sum_max_vectors_by_gate.iloc[selected_gates_number:]['sum'].sum()
                 deep_fanouts_total_remaining = resulted_df.iloc[selected_gates_number:]['sum'].sum()
+                sum_total_remaining = sum_vectors_by_gate.iloc[selected_gates_number:]['sum'].sum()
+
+                gates_max = sum_max_vectors_by_gate.head(selected_gates_number)['logic_gate'].unique()
+                gates_sum = sum_vectors_by_gate.head(selected_gates_number)['logic_gate'].unique()
+                gates_deep_fanout = resulted_df.head(selected_gates_number)['logic_gate'].unique()
+
                 selective_hardening_output['results'].append(
                     {
                         "percentage": percentage,
                         "selected_gates": selected_gates_number,
-                        "difference": total_selected - deep_fanouts_total_selected,
+                        "gates_max": set(gates_max),
+                        "gates_sum": set(gates_sum),
+                        "gates_deep_fanout": set(gates_deep_fanout),
+                        "deep_fanout_difference": sum_total_selected - deep_fanouts_total_selected,
+                        "max_sum_difference": sum_total_selected - total_selected,
+                        "sum_total_vectors_for_selected_gates": sum_total_selected,
+                        "sum_total_vectors_remaining_gates": sum_total_remaining,
                         "max_sum_total_vectors_for_selected_gates": total_selected,
                         "max_sum_total_vectors_remaining_gates": total_remaining,
                         "deep_fanout_total_vectors_for_selected_gates": deep_fanouts_total_selected,
@@ -189,9 +204,11 @@ class GenerateResults:
                     }
                 )
             results_df = pd.DataFrame(selective_hardening_output['results'])
-            results_df.to_csv(path_concat(self.BASE_PATH, "outputs", "max_sum_vs_deep_fanout", circuit))
+            pd.set_option('display.max_colwidth', None)
 
-            resulted_df.to_csv(path_concat(self.BASE_PATH, "outputs", "sensitive_nodes_by_logic_gate", circuit))
+            results_df.to_csv(path_concat(self.BASE_PATH, "outputs", "max_sum_vs_deep_fanout", circuit + ".csv"))
+
+            resulted_df.to_csv(path_concat(self.BASE_PATH, "outputs", "sensitive_nodes_by_logic_gate", circuit + ".csv"))
 
     def get_new_sus(self):
         for circuit in ['c17']:

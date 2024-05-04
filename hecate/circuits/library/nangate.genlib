@@ -1,0 +1,32 @@
+# 45 nm Nangate Library
+# (Single-output logic gates converted to GENLIB by Paulo Butzen)
+GATE LOGIC0_X1      1  Z=CONST0;
+GATE LOGIC1_X1       1  Z=CONST1;
+GATE AND2_X1   1  ZN=(A1*A2);                        PIN * INV 1 999 1 0 1 0
+GATE AND3_X1   1  ZN=(A1*A2*A3);                     PIN * INV 1 999 1 0 1 0
+GATE AND4_X1   1  ZN=(A1*A2*A3*A4);                     PIN * INV 1 999 1 0 1 0
+GATE AOI21_X1  1  ZN=!(A+(B1*B2));                        PIN * INV 1 999 1 0 1 0
+GATE AOI22_X1  1  ZN=!((A1*A2)+(B1*B2));                        PIN * INV 1 999 1 0 1 0
+GATE AOI211_X1  1  ZN=!(A+B+(C1*C2));                        PIN * INV 1 999 1 0 1 0
+GATE AOI221_X1  1  ZN=!(A+(B1*B2)+(C1*C2));                        PIN * INV 1 999 1 0 1 0
+GATE AOI222_X1  1  ZN=!((A1*A2)+(B1*B2)+(C1*C2));                        PIN * INV 1 999 1 0 1 0
+GATE BUF_X1     1  Z=A;                         PIN * NONINV 1 999 1 0 1 0
+GATE INV_X1     1  ZN=!A;                         PIN * NONINV 1 999 1 0 1 0
+GATE MUX2_X1   1  Z=((S*B)+(A*!S));                         PIN * NONINV 1 999 1 0 1 0
+GATE NOR2_X1    1  ZN=!(A1+A2);                    PIN * INV 1 999 1 0 1 0
+GATE NOR3_X1    1  ZN=!(A1+A2+A3);                  PIN * INV 1 999 1 0 1 0
+GATE NOR4_X1    1  ZN=!(A1+A2+A3+A4);                PIN * INV 1 999 1 0 1 0
+GATE NAND2_X1   1  ZN=!(A1*A2);                    PIN * INV 1 999 1 0 1 0
+GATE NAND3_X1   1  ZN=!(A1*A2*A3);                  PIN * INV 1 999 1 0 1 0
+GATE NAND4_X1   1  ZN=!(A1*A2*A3*A4);                PIN * INV 1 999 1 0 1 0
+GATE OAI21_X1  1  ZN=!(A*(B1+B2));                        PIN * INV 1 999 1 0 1 0
+GATE OAI22_X1  1  ZN=!((A1+A2)*(B1+B2));                        PIN * INV 1 999 1 0 1 0
+GATE OAI33_X1  1  ZN=!((A1+A2+A3)*(B1+B2+B3));                        PIN * INV 1 999 1 0 1 0
+GATE OAI211_X1  1  ZN=!(A*B*(C1+C2));                        PIN * INV 1 999 1 0 1 0
+GATE OAI221_X1  1  ZN=!(A*(B1+B2)*(C1+C2));                        PIN * INV 1 999 1 0 1 0
+GATE OAI222_X1  1  ZN=!((A1+A2)*(B1+B2)*(C1+C2));                        PIN * INV 1 999 1 0 1 0
+GATE OR2_X1     1  ZN=A1+A2;                       PIN * NONINV 1 999 1 0 1 0
+GATE OR3_X1     1  ZN=A1+A2+A3;                       PIN * NONINV 1 999 1 0 1 0
+GATE OR4_X1     1  ZN=A1+A2+A3+A4;                       PIN * NONINV 1 999 1 0 1 0
+GATE XNOR2_X1    1  ZN=(A*B)+(!A*!B);             PIN * UNKNOWN 1 999 1 0 1 0
+GATE XOR2_X1    1  Z=(A*!B)+(!A*B);             PIN * UNKNOWN 1 999 1 0 1 0
