@@ -82,7 +82,7 @@ class Hecate:
             inputs=self.netlist.input_signals_list
         )
         vectors, self.total_vectors, self.evaluated_vectors = inputs.get_all_input_vectors(int(sample_size))
-        with open(path_concat(self.BASE_PATH, "outputs", self.circuit[:-4] + ".out"), 'w') as output:
+        with open(path_concat(self.BASE_PATH, "outputs", self.circuit + ".out"), 'w') as output:
             start = timeit.default_timer()
             output.write(f"Nome do arquivo avaliado: {self.circuit} \n")
             output.write(f"Quantidade de vetores testados: {self.evaluated_vectors} "
@@ -197,12 +197,21 @@ class Hecate:
 
 
 if __name__ == '__main__':
-    hecate = Hecate(f"schvittz")
-    hecate.sensitive_nodes_for_all_input_values(1)
+    '''
+        'int2float', 'cavlc', 'router',  'i2c', 'priority',  'dec', 'ctrl',
 
-    # hecate.sensitive_nodes_for_a_vector("00000")
-    hecate.critical_nodes()
-    hecate.critical_vectors()
+    '''
+    # for circuit in ['arbiter', 'voter',  'mem_ctrl']:
+    for circuit in ['b01', 'b02', 'b03', 'b04', 'b05', 'b06', 'b07', 'b08', 'b09', 'b10', 'b11', 'b12', 'b13', 'b14',
+                    'b15', 'b17', 'b20', 'b21', 'b22']:
+        print(circuit)
+
+        hecate = Hecate(circuit)
+        hecate.sensitive_nodes_for_all_input_values(100)
+
+        # hecate.sensitive_nodes_for_a_vector("00000")
+        hecate.critical_nodes()
+        hecate.critical_vectors()
 
 # salvar as saídas e dos nodos internos
 # zerar o valor de todos (testar nodos reversamente polarizados)

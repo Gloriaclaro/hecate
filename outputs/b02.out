@@ -1,0 +1,21 @@
+Nome do arquivo avaliado: b02 
+Quantidade de vetores testados: 16 - 1.0 
+total_evaluated_nodes: 42 
+vector | sensitive_node | total_reverse_biased | not_mask_reverse_biased | runtime 
+0000 | ['n12', 'n15', 'n17', 'net_0_g09', 'n18', 'net_1_g11', 'net_1_g15', 'net_0_g15', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 22 | 12 | 0.004199500000000023
+0001 | ['n10', 'n11', 'n12', 'n15', 'net_1_g07', 'n19', 'net_0_g12', 'n21', 'ZN_neg_g13', 'n22', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 20 | 14 | 0.0035095000000000542
+0010 | ['n11', 'n12', 'n13', 'net_1_g04', 'n14', 'n15', 'n17', 'n18', 'net_0_g11', 'ZN_neg_g13', 'n22', 'net_0_g14', 'net_0_g15', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 21 | 17 | 0.003963099999999997
+0011 | ['n10', 'n12', 'n13', 'net_0_g04', 'n14', 'net_1_g05', 'n18', 'n19', 'ZN_neg_g13', 'n22', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 19 | 14 | 0.0034033999999999454
+0100 | ['n10', 'n12', 'n15', 'net_0_g06', 'net_1_g07', 'n17', 'net_0_g09', 'n18', 'net_1_g11', 'n21', 'net_1_g12', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 22 | 15 | 0.003921100000000011
+0101 | ['n12', 'n15', 'net_0_g07', 'n19', 'n21', 'ZN_neg_g13', 'n22', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 18 | 11 | 0.002950800000000031
+0110 | ['n10', 'n11', 'n12', 'n14', 'n17', 'net_1_g09', 'net_0_g09', 'n18', 'net_1_g11', 'ZN_neg_g13', 'n22', 'net_0_g13', 'net_1_g14', 'net_0_g15', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 25 | 18 | 0.004684200000000027
+0111 | ['n12', 'n19', 'net_1_g10', 'ZN_neg_g13', 'n22', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 18 | 9 | 0.00300060000000002
+1000 | ['n10', 'n15', 'net_0_g06', 'net_1_g07', 'n17', 'net_0_g09', 'n18', 'n21', 'net_1_g15', 'net_0_g15', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 25 | 14 | 0.004723900000000003
+1001 | ['n11', 'n15', 'net_1_g06', 'net_0_g07', 'n17', 'n18', 'net_0_g10', 'n19', 'n21', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 20 | 13 | 0.0033394999999999397
+1010 | ['n10', 'n11', 'n12', 'n13', 'n14', 'net_1_g05', 'n17', 'n18', 'net_0_g11', 'ZN_neg_g13', 'n22', 'net_0_g13', 'net_1_g13', 'net_1_g14', 'net_0_g15', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 23 | 19 | 0.004594500000000057
+1011 | ['n12', 'n18', 'n19', 'ZN_neg_g13', 'n22', 'net_1_g14', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 19 | 10 | 0.003124099999999963
+1100 | ['n12', 'n15', 'net_0_g06', 'n17', 'net_0_g09', 'n18', 'net_1_g11', 'n21', 'net_1_g12', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 23 | 13 | 0.00445720000000005
+1101 | ['n12', 'n15', 'net_0_g07', 'n17', 'n19', 'net_1_g10', 'n21', 'ZN_neg_g13', 'n22', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 20 | 13 | 0.0034857999999999834
+1110 | ['n11', 'n12', 'n13', 'net_0_g05', 'n14', 'n15', 'net_0_g06', 'n17', 'net_1_g09', 'net_0_g09', 'n18', 'net_1_g11', 'ZN_neg_g13', 'n22', 'net_0_g13', 'net_1_g14', 'net_0_g15', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 26 | 21 | 0.005182099999999967
+1111 | ['n12', 'n19', 'net_1_g10', 'ZN_neg_g13', 'n22', 'STATO_REG_2__SCAN_OUT', 'STATO_REG_1__SCAN_OUT', 'STATO_REG_0__SCAN_OUT', 'U_REG_SCAN_OUT'] | 19 | 9 | 0.0031497999999999804
+runtime: 0.062112900000000026

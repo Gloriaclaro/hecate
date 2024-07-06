@@ -10,8 +10,8 @@ class GenerateResults:
     BASE_PATH = Path(__file__).parent
 
     def __init__(self, file_name: str):
-        self.critical_nodes_path = path_concat(self.BASE_PATH, "outputs", "temp", "400", "critical_nodes")
-        self.critical_vectors_path = path_concat(self.BASE_PATH, "outputs", "temp", "400", "critical_vectors")
+        self.critical_nodes_path = path_concat(self.BASE_PATH, "outputs",  "critical_nodes")
+        self.critical_vectors_path = path_concat(self.BASE_PATH, "outputs", "critical_vectors")
         self.full_result_path_100 = path_concat(self.BASE_PATH, "outputs", "temp", "400")
         self.full_result_path_400 = path_concat(self.BASE_PATH, "outputs", "temp", "400")
         self.logic_gates_path = path_concat(self.BASE_PATH, "hecate", "circuits", "logic_gate")
@@ -151,7 +151,7 @@ class GenerateResults:
         return sum_max_vectors_by_gate
 
     def get_logic_gate_critical_nodes(self):
-        for circuit in ['c432', 'c499', 'c880', 'c1355', 'c1908', 'c3540', 'c5315', 'c6288', 'c7552']:
+        for circuit in ['int2float', 'cavlc', 'router', 'i2c', 'priority', 'dec', 'ctrl', 'arbiter']:
             sum_max_vectors_by_gate = self.get_vectors_by_max_and_sum_of_vectors(circuit + ".txt")
 
             sum_max_vectors_by_gate.sort_values(['max', 'sum-max'], ascending=False, inplace=True)
@@ -170,7 +170,7 @@ class GenerateResults:
                 "total": total,
                 "results": []
             }
-            for percentage in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]:
+            for percentage in [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]:
                 selected_gates_number = math.ceil(n_gates*percentage)
                 if percentage == 1:
                     print(circuit, percentage, selected_gates_number)

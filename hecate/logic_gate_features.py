@@ -48,9 +48,10 @@ class LogicGateFeatures:
                         new_distance, gate_name = self.find_short_path(next_gate, distance)
                         distances.append(new_distance)
 
-        # if not distances:
-        #     return "not found", gate.name
-        # print(distances)
+        if not distances:
+            print(gate.name)
+            return "not found", gate.name
+        print(distances)
         distance = sorted(distances)[-1]
         return distance, gate.name
 

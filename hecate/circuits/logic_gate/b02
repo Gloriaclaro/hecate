@@ -1,0 +1,16 @@
+logic_gate nodes
+g01 n10
+g02 n11
+g03 n12
+g04 n13,net_0_g04,net_1_g04
+g05 n14,net_0_g05,net_1_g05
+g06 n15,net_0_g06,net_1_g06
+g07 STATO_REG_2__SCAN_OUT,net_0_g07,net_1_g07
+g08 n17
+g09 n18,net_1_g09,net_0_g09
+g10 n19,net_0_g10,net_1_g10
+g11 STATO_REG_1__SCAN_OUT,net_0_g11,net_1_g11
+g12 n21,net_0_g12,net_1_g12
+g13 n22,ZN_neg_g13,net_0_g13,net_1_g13
+g14 STATO_REG_0__SCAN_OUT,net_0_g14,net_1_g14
+g15 U_REG_SCAN_OUT,net_1_g15,net_0_g15

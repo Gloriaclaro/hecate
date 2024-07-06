@@ -1,0 +1,439 @@
+// Benchmark "top" written by ABC on Sun Jun 16 00:03:33 2024
+
+module top ( 
+    \count[0] , \count[1] , \count[2] , \count[3] , \count[4] , \count[5] ,
+    \count[6] , \count[7] ,
+    \selectp1[0] , \selectp1[1] , \selectp1[2] , \selectp1[3] ,
+    \selectp1[4] , \selectp1[5] , \selectp1[6] , \selectp1[7] ,
+    \selectp1[8] , \selectp1[9] , \selectp1[10] , \selectp1[11] ,
+    \selectp1[12] , \selectp1[13] , \selectp1[14] , \selectp1[15] ,
+    \selectp1[16] , \selectp1[17] , \selectp1[18] , \selectp1[19] ,
+    \selectp1[20] , \selectp1[21] , \selectp1[22] , \selectp1[23] ,
+    \selectp1[24] , \selectp1[25] , \selectp1[26] , \selectp1[27] ,
+    \selectp1[28] , \selectp1[29] , \selectp1[30] , \selectp1[31] ,
+    \selectp1[32] , \selectp1[33] , \selectp1[34] , \selectp1[35] ,
+    \selectp1[36] , \selectp1[37] , \selectp1[38] , \selectp1[39] ,
+    \selectp1[40] , \selectp1[41] , \selectp1[42] , \selectp1[43] ,
+    \selectp1[44] , \selectp1[45] , \selectp1[46] , \selectp1[47] ,
+    \selectp1[48] , \selectp1[49] , \selectp1[50] , \selectp1[51] ,
+    \selectp1[52] , \selectp1[53] , \selectp1[54] , \selectp1[55] ,
+    \selectp1[56] , \selectp1[57] , \selectp1[58] , \selectp1[59] ,
+    \selectp1[60] , \selectp1[61] , \selectp1[62] , \selectp1[63] ,
+    \selectp1[64] , \selectp1[65] , \selectp1[66] , \selectp1[67] ,
+    \selectp1[68] , \selectp1[69] , \selectp1[70] , \selectp1[71] ,
+    \selectp1[72] , \selectp1[73] , \selectp1[74] , \selectp1[75] ,
+    \selectp1[76] , \selectp1[77] , \selectp1[78] , \selectp1[79] ,
+    \selectp1[80] , \selectp1[81] , \selectp1[82] , \selectp1[83] ,
+    \selectp1[84] , \selectp1[85] , \selectp1[86] , \selectp1[87] ,
+    \selectp1[88] , \selectp1[89] , \selectp1[90] , \selectp1[91] ,
+    \selectp1[92] , \selectp1[93] , \selectp1[94] , \selectp1[95] ,
+    \selectp1[96] , \selectp1[97] , \selectp1[98] , \selectp1[99] ,
+    \selectp1[100] , \selectp1[101] , \selectp1[102] , \selectp1[103] ,
+    \selectp1[104] , \selectp1[105] , \selectp1[106] , \selectp1[107] ,
+    \selectp1[108] , \selectp1[109] , \selectp1[110] , \selectp1[111] ,
+    \selectp1[112] , \selectp1[113] , \selectp1[114] , \selectp1[115] ,
+    \selectp1[116] , \selectp1[117] , \selectp1[118] , \selectp1[119] ,
+    \selectp1[120] , \selectp1[121] , \selectp1[122] , \selectp1[123] ,
+    \selectp1[124] , \selectp1[125] , \selectp1[126] , \selectp1[127] ,
+    \selectp2[0] , \selectp2[1] , \selectp2[2] , \selectp2[3] ,
+    \selectp2[4] , \selectp2[5] , \selectp2[6] , \selectp2[7] ,
+    \selectp2[8] , \selectp2[9] , \selectp2[10] , \selectp2[11] ,
+    \selectp2[12] , \selectp2[13] , \selectp2[14] , \selectp2[15] ,
+    \selectp2[16] , \selectp2[17] , \selectp2[18] , \selectp2[19] ,
+    \selectp2[20] , \selectp2[21] , \selectp2[22] , \selectp2[23] ,
+    \selectp2[24] , \selectp2[25] , \selectp2[26] , \selectp2[27] ,
+    \selectp2[28] , \selectp2[29] , \selectp2[30] , \selectp2[31] ,
+    \selectp2[32] , \selectp2[33] , \selectp2[34] , \selectp2[35] ,
+    \selectp2[36] , \selectp2[37] , \selectp2[38] , \selectp2[39] ,
+    \selectp2[40] , \selectp2[41] , \selectp2[42] , \selectp2[43] ,
+    \selectp2[44] , \selectp2[45] , \selectp2[46] , \selectp2[47] ,
+    \selectp2[48] , \selectp2[49] , \selectp2[50] , \selectp2[51] ,
+    \selectp2[52] , \selectp2[53] , \selectp2[54] , \selectp2[55] ,
+    \selectp2[56] , \selectp2[57] , \selectp2[58] , \selectp2[59] ,
+    \selectp2[60] , \selectp2[61] , \selectp2[62] , \selectp2[63] ,
+    \selectp2[64] , \selectp2[65] , \selectp2[66] , \selectp2[67] ,
+    \selectp2[68] , \selectp2[69] , \selectp2[70] , \selectp2[71] ,
+    \selectp2[72] , \selectp2[73] , \selectp2[74] , \selectp2[75] ,
+    \selectp2[76] , \selectp2[77] , \selectp2[78] , \selectp2[79] ,
+    \selectp2[80] , \selectp2[81] , \selectp2[82] , \selectp2[83] ,
+    \selectp2[84] , \selectp2[85] , \selectp2[86] , \selectp2[87] ,
+    \selectp2[88] , \selectp2[89] , \selectp2[90] , \selectp2[91] ,
+    \selectp2[92] , \selectp2[93] , \selectp2[94] , \selectp2[95] ,
+    \selectp2[96] , \selectp2[97] , \selectp2[98] , \selectp2[99] ,
+    \selectp2[100] , \selectp2[101] , \selectp2[102] , \selectp2[103] ,
+    \selectp2[104] , \selectp2[105] , \selectp2[106] , \selectp2[107] ,
+    \selectp2[108] , \selectp2[109] , \selectp2[110] , \selectp2[111] ,
+    \selectp2[112] , \selectp2[113] , \selectp2[114] , \selectp2[115] ,
+    \selectp2[116] , \selectp2[117] , \selectp2[118] , \selectp2[119] ,
+    \selectp2[120] , \selectp2[121] , \selectp2[122] , \selectp2[123] ,
+    \selectp2[124] , \selectp2[125] , \selectp2[126] , \selectp2[127]   );
+  input  \count[0] , \count[1] , \count[2] , \count[3] , \count[4] ,
+    \count[5] , \count[6] , \count[7] ;
+  output \selectp1[0] , \selectp1[1] , \selectp1[2] , \selectp1[3] ,
+    \selectp1[4] , \selectp1[5] , \selectp1[6] , \selectp1[7] ,
+    \selectp1[8] , \selectp1[9] , \selectp1[10] , \selectp1[11] ,
+    \selectp1[12] , \selectp1[13] , \selectp1[14] , \selectp1[15] ,
+    \selectp1[16] , \selectp1[17] , \selectp1[18] , \selectp1[19] ,
+    \selectp1[20] , \selectp1[21] , \selectp1[22] , \selectp1[23] ,
+    \selectp1[24] , \selectp1[25] , \selectp1[26] , \selectp1[27] ,
+    \selectp1[28] , \selectp1[29] , \selectp1[30] , \selectp1[31] ,
+    \selectp1[32] , \selectp1[33] , \selectp1[34] , \selectp1[35] ,
+    \selectp1[36] , \selectp1[37] , \selectp1[38] , \selectp1[39] ,
+    \selectp1[40] , \selectp1[41] , \selectp1[42] , \selectp1[43] ,
+    \selectp1[44] , \selectp1[45] , \selectp1[46] , \selectp1[47] ,
+    \selectp1[48] , \selectp1[49] , \selectp1[50] , \selectp1[51] ,
+    \selectp1[52] , \selectp1[53] , \selectp1[54] , \selectp1[55] ,
+    \selectp1[56] , \selectp1[57] , \selectp1[58] , \selectp1[59] ,
+    \selectp1[60] , \selectp1[61] , \selectp1[62] , \selectp1[63] ,
+    \selectp1[64] , \selectp1[65] , \selectp1[66] , \selectp1[67] ,
+    \selectp1[68] , \selectp1[69] , \selectp1[70] , \selectp1[71] ,
+    \selectp1[72] , \selectp1[73] , \selectp1[74] , \selectp1[75] ,
+    \selectp1[76] , \selectp1[77] , \selectp1[78] , \selectp1[79] ,
+    \selectp1[80] , \selectp1[81] , \selectp1[82] , \selectp1[83] ,
+    \selectp1[84] , \selectp1[85] , \selectp1[86] , \selectp1[87] ,
+    \selectp1[88] , \selectp1[89] , \selectp1[90] , \selectp1[91] ,
+    \selectp1[92] , \selectp1[93] , \selectp1[94] , \selectp1[95] ,
+    \selectp1[96] , \selectp1[97] , \selectp1[98] , \selectp1[99] ,
+    \selectp1[100] , \selectp1[101] , \selectp1[102] , \selectp1[103] ,
+    \selectp1[104] , \selectp1[105] , \selectp1[106] , \selectp1[107] ,
+    \selectp1[108] , \selectp1[109] , \selectp1[110] , \selectp1[111] ,
+    \selectp1[112] , \selectp1[113] , \selectp1[114] , \selectp1[115] ,
+    \selectp1[116] , \selectp1[117] , \selectp1[118] , \selectp1[119] ,
+    \selectp1[120] , \selectp1[121] , \selectp1[122] , \selectp1[123] ,
+    \selectp1[124] , \selectp1[125] , \selectp1[126] , \selectp1[127] ,
+    \selectp2[0] , \selectp2[1] , \selectp2[2] , \selectp2[3] ,
+    \selectp2[4] , \selectp2[5] , \selectp2[6] , \selectp2[7] ,
+    \selectp2[8] , \selectp2[9] , \selectp2[10] , \selectp2[11] ,
+    \selectp2[12] , \selectp2[13] , \selectp2[14] , \selectp2[15] ,
+    \selectp2[16] , \selectp2[17] , \selectp2[18] , \selectp2[19] ,
+    \selectp2[20] , \selectp2[21] , \selectp2[22] , \selectp2[23] ,
+    \selectp2[24] , \selectp2[25] , \selectp2[26] , \selectp2[27] ,
+    \selectp2[28] , \selectp2[29] , \selectp2[30] , \selectp2[31] ,
+    \selectp2[32] , \selectp2[33] , \selectp2[34] , \selectp2[35] ,
+    \selectp2[36] , \selectp2[37] , \selectp2[38] , \selectp2[39] ,
+    \selectp2[40] , \selectp2[41] , \selectp2[42] , \selectp2[43] ,
+    \selectp2[44] , \selectp2[45] , \selectp2[46] , \selectp2[47] ,
+    \selectp2[48] , \selectp2[49] , \selectp2[50] , \selectp2[51] ,
+    \selectp2[52] , \selectp2[53] , \selectp2[54] , \selectp2[55] ,
+    \selectp2[56] , \selectp2[57] , \selectp2[58] , \selectp2[59] ,
+    \selectp2[60] , \selectp2[61] , \selectp2[62] , \selectp2[63] ,
+    \selectp2[64] , \selectp2[65] , \selectp2[66] , \selectp2[67] ,
+    \selectp2[68] , \selectp2[69] , \selectp2[70] , \selectp2[71] ,
+    \selectp2[72] , \selectp2[73] , \selectp2[74] , \selectp2[75] ,
+    \selectp2[76] , \selectp2[77] , \selectp2[78] , \selectp2[79] ,
+    \selectp2[80] , \selectp2[81] , \selectp2[82] , \selectp2[83] ,
+    \selectp2[84] , \selectp2[85] , \selectp2[86] , \selectp2[87] ,
+    \selectp2[88] , \selectp2[89] , \selectp2[90] , \selectp2[91] ,
+    \selectp2[92] , \selectp2[93] , \selectp2[94] , \selectp2[95] ,
+    \selectp2[96] , \selectp2[97] , \selectp2[98] , \selectp2[99] ,
+    \selectp2[100] , \selectp2[101] , \selectp2[102] , \selectp2[103] ,
+    \selectp2[104] , \selectp2[105] , \selectp2[106] , \selectp2[107] ,
+    \selectp2[108] , \selectp2[109] , \selectp2[110] , \selectp2[111] ,
+    \selectp2[112] , \selectp2[113] , \selectp2[114] , \selectp2[115] ,
+    \selectp2[116] , \selectp2[117] , \selectp2[118] , \selectp2[119] ,
+    \selectp2[120] , \selectp2[121] , \selectp2[122] , \selectp2[123] ,
+    \selectp2[124] , \selectp2[125] , \selectp2[126] , \selectp2[127] ;
+  wire n264, n265, n266, n267, n268, n270, n271, n272, n273, n275, n276,
+    n278, n280, n282, n284, n286, n288, n290, n292, n294, n296, n298, n300,
+    n302, n304, n321, n338, n355, n372, n389, n406, n423, n440, n441, n458,
+    n475, n492, n509, n526, n543;
+  wire n264, n265, n266, n267, n268, n270, n271, n272, n273, n275, n276,
+    n278, n280, n282, n284, n286, n288, n290, n292, n294, n296, n298, n300,
+    n302, n304, n321, n338, n355, n372, n389, n406, n423, n440, n441, n458,
+    n475, n492, n509, n526, n543;
+  INV_X1    g000(.A(\count[4] ), .ZN(n264));
+  INV_X1    g001(.A(\count[5] ), .ZN(n265));
+  INV_X1    g002(.A(\count[6] ), .ZN(n266));
+NAND4_X1_p g003(.A1(n266), .A2(n265), .A3(n264), .A4(\count[7] ), .ZN(n267));
+OR4_X1_p g004(.A1(\count[2] ), .A2(\count[1] ), .A3(\count[0] ), .A4(\count[3] ), .ZN(n268));
+  NOR2_X1   g005(.A1(n268), .A2(n267), .ZN(\selectp1[0] ));
+  INV_X1    g006(.A(\count[1] ), .ZN(n270));
+  INV_X1    g007(.A(\count[2] ), .ZN(n271));
+  INV_X1    g008(.A(\count[3] ), .ZN(n272));
+NAND4_X1_p g009(.A1(n271), .A2(n270), .A3(\count[0] ), .A4(n272), .ZN(n273));
+NOR2_X1_p g010(.A1(n273), .A2(n267), .ZN(\selectp1[1] ));
+  INV_X1    g011(.A(\count[0] ), .ZN(n275));
+NAND4_X1_p g012(.A1(n271), .A2(\count[1] ), .A3(n275), .A4(n272), .ZN(n276));
+NOR2_X1_p g013(.A1(n276), .A2(n267), .ZN(\selectp1[2] ));
+NAND4_X1_p g014(.A1(n271), .A2(\count[1] ), .A3(\count[0] ), .A4(n272), .ZN(n278));
+  NOR2_X1   g015(.A1(n278), .A2(n267), .ZN(\selectp1[3] ));
+NAND4_X1_p g016(.A1(\count[2] ), .A2(n270), .A3(n275), .A4(n272), .ZN(n280));
+NOR2_X1_p g017(.A1(n280), .A2(n267), .ZN(\selectp1[4] ));
+NAND4_X1_p g018(.A1(\count[2] ), .A2(n270), .A3(\count[0] ), .A4(n272), .ZN(n282));
+NOR2_X1_p g019(.A1(n282), .A2(n267), .ZN(\selectp1[5] ));
+NAND4_X1_p g020(.A1(\count[2] ), .A2(\count[1] ), .A3(n275), .A4(n272), .ZN(n284));
+NOR2_X1_p g021(.A1(n284), .A2(n267), .ZN(\selectp1[6] ));
+NAND4_X1_p g022(.A1(\count[2] ), .A2(\count[1] ), .A3(\count[0] ), .A4(n272), .ZN(n286));
+NOR2_X1_p g023(.A1(n286), .A2(n267), .ZN(\selectp1[7] ));
+NAND4_X1_p g024(.A1(n271), .A2(n270), .A3(n275), .A4(\count[3] ), .ZN(n288));
+NOR2_X1_p g025(.A1(n288), .A2(n267), .ZN(\selectp1[8] ));
+NAND4_X1_p g026(.A1(n271), .A2(n270), .A3(\count[0] ), .A4(\count[3] ), .ZN(n290));
+NOR2_X1_p g027(.A1(n290), .A2(n267), .ZN(\selectp1[9] ));
+NAND4_X1_p g028(.A1(n271), .A2(\count[1] ), .A3(n275), .A4(\count[3] ), .ZN(n292));
+NOR2_X1_p g029(.A1(n292), .A2(n267), .ZN(\selectp1[10] ));
+NAND4_X1_p g030(.A1(n271), .A2(\count[1] ), .A3(\count[0] ), .A4(\count[3] ), .ZN(n294));
+NOR2_X1_p g031(.A1(n294), .A2(n267), .ZN(\selectp1[11] ));
+NAND4_X1_p g032(.A1(\count[2] ), .A2(n270), .A3(n275), .A4(\count[3] ), .ZN(n296));
+NOR2_X1_p g033(.A1(n296), .A2(n267), .ZN(\selectp1[12] ));
+NAND4_X1_p g034(.A1(\count[2] ), .A2(n270), .A3(\count[0] ), .A4(\count[3] ), .ZN(n298));
+  NOR2_X1   g035(.A1(n298), .A2(n267), .ZN(\selectp1[13] ));
+NAND4_X1_p g036(.A1(\count[2] ), .A2(\count[1] ), .A3(n275), .A4(\count[3] ), .ZN(n300));
+NOR2_X1_p g037(.A1(n300), .A2(n267), .ZN(\selectp1[14] ));
+NAND4_X1_p g038(.A1(\count[2] ), .A2(\count[1] ), .A3(\count[0] ), .A4(\count[3] ), .ZN(n302));
+  NOR2_X1   g039(.A1(n302), .A2(n267), .ZN(\selectp1[15] ));
+NAND4_X1_p g040(.A1(n266), .A2(n265), .A3(\count[4] ), .A4(\count[7] ), .ZN(n304));
+NOR2_X1_p g041(.A1(n304), .A2(n268), .ZN(\selectp1[16] ));
+NOR2_X1_p g042(.A1(n304), .A2(n273), .ZN(\selectp1[17] ));
+NOR2_X1_p g043(.A1(n304), .A2(n276), .ZN(\selectp1[18] ));
+NOR2_X1_p g044(.A1(n304), .A2(n278), .ZN(\selectp1[19] ));
+NOR2_X1_p g045(.A1(n304), .A2(n280), .ZN(\selectp1[20] ));
+NOR2_X1_p g046(.A1(n304), .A2(n282), .ZN(\selectp1[21] ));
+NOR2_X1_p g047(.A1(n304), .A2(n284), .ZN(\selectp1[22] ));
+  NOR2_X1   g048(.A1(n304), .A2(n286), .ZN(\selectp1[23] ));
+NOR2_X1_p g049(.A1(n304), .A2(n288), .ZN(\selectp1[24] ));
+NOR2_X1_p g050(.A1(n304), .A2(n290), .ZN(\selectp1[25] ));
+NOR2_X1_p g051(.A1(n304), .A2(n292), .ZN(\selectp1[26] ));
+NOR2_X1_p g052(.A1(n304), .A2(n294), .ZN(\selectp1[27] ));
+NOR2_X1_p g053(.A1(n304), .A2(n296), .ZN(\selectp1[28] ));
+  NOR2_X1   g054(.A1(n304), .A2(n298), .ZN(\selectp1[29] ));
+NOR2_X1_p g055(.A1(n304), .A2(n300), .ZN(\selectp1[30] ));
+NOR2_X1_p g056(.A1(n304), .A2(n302), .ZN(\selectp1[31] ));
+NAND4_X1_p g057(.A1(n266), .A2(\count[5] ), .A3(n264), .A4(\count[7] ), .ZN(n321));
+NOR2_X1_p g058(.A1(n321), .A2(n268), .ZN(\selectp1[32] ));
+  NOR2_X1   g059(.A1(n321), .A2(n273), .ZN(\selectp1[33] ));
+NOR2_X1_p g060(.A1(n321), .A2(n276), .ZN(\selectp1[34] ));
+NOR2_X1_p g061(.A1(n321), .A2(n278), .ZN(\selectp1[35] ));
+NOR2_X1_p g062(.A1(n321), .A2(n280), .ZN(\selectp1[36] ));
+NOR2_X1_p g063(.A1(n321), .A2(n282), .ZN(\selectp1[37] ));
+  NOR2_X1   g064(.A1(n321), .A2(n284), .ZN(\selectp1[38] ));
+NOR2_X1_p g065(.A1(n321), .A2(n286), .ZN(\selectp1[39] ));
+  NOR2_X1   g066(.A1(n321), .A2(n288), .ZN(\selectp1[40] ));
+NOR2_X1_p g067(.A1(n321), .A2(n290), .ZN(\selectp1[41] ));
+NOR2_X1_p g068(.A1(n321), .A2(n292), .ZN(\selectp1[42] ));
+NOR2_X1_p g069(.A1(n321), .A2(n294), .ZN(\selectp1[43] ));
+NOR2_X1_p g070(.A1(n321), .A2(n296), .ZN(\selectp1[44] ));
+  NOR2_X1   g071(.A1(n321), .A2(n298), .ZN(\selectp1[45] ));
+NOR2_X1_p g072(.A1(n321), .A2(n300), .ZN(\selectp1[46] ));
+NOR2_X1_p g073(.A1(n321), .A2(n302), .ZN(\selectp1[47] ));
+NAND4_X1_p g074(.A1(n266), .A2(\count[5] ), .A3(\count[4] ), .A4(\count[7] ), .ZN(n338));
+  NOR2_X1   g075(.A1(n338), .A2(n268), .ZN(\selectp1[48] ));
+  NOR2_X1   g076(.A1(n338), .A2(n273), .ZN(\selectp1[49] ));
+  NOR2_X1   g077(.A1(n338), .A2(n276), .ZN(\selectp1[50] ));
+  NOR2_X1   g078(.A1(n338), .A2(n278), .ZN(\selectp1[51] ));
+  NOR2_X1   g079(.A1(n338), .A2(n280), .ZN(\selectp1[52] ));
+  NOR2_X1   g080(.A1(n338), .A2(n282), .ZN(\selectp1[53] ));
+  NOR2_X1   g081(.A1(n338), .A2(n284), .ZN(\selectp1[54] ));
+  NOR2_X1   g082(.A1(n338), .A2(n286), .ZN(\selectp1[55] ));
+  NOR2_X1   g083(.A1(n338), .A2(n288), .ZN(\selectp1[56] ));
+  NOR2_X1   g084(.A1(n338), .A2(n290), .ZN(\selectp1[57] ));
+  NOR2_X1   g085(.A1(n338), .A2(n292), .ZN(\selectp1[58] ));
+  NOR2_X1   g086(.A1(n338), .A2(n294), .ZN(\selectp1[59] ));
+  NOR2_X1   g087(.A1(n338), .A2(n296), .ZN(\selectp1[60] ));
+  NOR2_X1   g088(.A1(n338), .A2(n298), .ZN(\selectp1[61] ));
+  NOR2_X1   g089(.A1(n338), .A2(n300), .ZN(\selectp1[62] ));
+  NOR2_X1   g090(.A1(n338), .A2(n302), .ZN(\selectp1[63] ));
+NAND4_X1_p g091(.A1(\count[6] ), .A2(n265), .A3(n264), .A4(\count[7] ), .ZN(n355));
+NOR2_X1_p g092(.A1(n355), .A2(n268), .ZN(\selectp1[64] ));
+NOR2_X1_p g093(.A1(n355), .A2(n273), .ZN(\selectp1[65] ));
+NOR2_X1_p g094(.A1(n355), .A2(n276), .ZN(\selectp1[66] ));
+NOR2_X1_p g095(.A1(n355), .A2(n278), .ZN(\selectp1[67] ));
+NOR2_X1_p g096(.A1(n355), .A2(n280), .ZN(\selectp1[68] ));
+NOR2_X1_p g097(.A1(n355), .A2(n282), .ZN(\selectp1[69] ));
+NOR2_X1_p g098(.A1(n355), .A2(n284), .ZN(\selectp1[70] ));
+NOR2_X1_p g099(.A1(n355), .A2(n286), .ZN(\selectp1[71] ));
+NOR2_X1_p g100(.A1(n355), .A2(n288), .ZN(\selectp1[72] ));
+NOR2_X1_p g101(.A1(n355), .A2(n290), .ZN(\selectp1[73] ));
+NOR2_X1_p g102(.A1(n355), .A2(n292), .ZN(\selectp1[74] ));
+NOR2_X1_p g103(.A1(n355), .A2(n294), .ZN(\selectp1[75] ));
+NOR2_X1_p g104(.A1(n355), .A2(n296), .ZN(\selectp1[76] ));
+NOR2_X1_p g105(.A1(n355), .A2(n298), .ZN(\selectp1[77] ));
+NOR2_X1_p g106(.A1(n355), .A2(n300), .ZN(\selectp1[78] ));
+NOR2_X1_p g107(.A1(n355), .A2(n302), .ZN(\selectp1[79] ));
+NAND4_X1_p g108(.A1(\count[6] ), .A2(n265), .A3(\count[4] ), .A4(\count[7] ), .ZN(n372));
+  NOR2_X1   g109(.A1(n372), .A2(n268), .ZN(\selectp1[80] ));
+  NOR2_X1   g110(.A1(n372), .A2(n273), .ZN(\selectp1[81] ));
+  NOR2_X1   g111(.A1(n372), .A2(n276), .ZN(\selectp1[82] ));
+  NOR2_X1   g112(.A1(n372), .A2(n278), .ZN(\selectp1[83] ));
+  NOR2_X1   g113(.A1(n372), .A2(n280), .ZN(\selectp1[84] ));
+  NOR2_X1   g114(.A1(n372), .A2(n282), .ZN(\selectp1[85] ));
+  NOR2_X1   g115(.A1(n372), .A2(n284), .ZN(\selectp1[86] ));
+  NOR2_X1   g116(.A1(n372), .A2(n286), .ZN(\selectp1[87] ));
+  NOR2_X1   g117(.A1(n372), .A2(n288), .ZN(\selectp1[88] ));
+  NOR2_X1   g118(.A1(n372), .A2(n290), .ZN(\selectp1[89] ));
+  NOR2_X1   g119(.A1(n372), .A2(n292), .ZN(\selectp1[90] ));
+  NOR2_X1   g120(.A1(n372), .A2(n294), .ZN(\selectp1[91] ));
+  NOR2_X1   g121(.A1(n372), .A2(n296), .ZN(\selectp1[92] ));
+  NOR2_X1   g122(.A1(n372), .A2(n298), .ZN(\selectp1[93] ));
+  NOR2_X1   g123(.A1(n372), .A2(n300), .ZN(\selectp1[94] ));
+  NOR2_X1   g124(.A1(n372), .A2(n302), .ZN(\selectp1[95] ));
+NAND4_X1_p g125(.A1(\count[6] ), .A2(\count[5] ), .A3(n264), .A4(\count[7] ), .ZN(n389));
+  NOR2_X1   g126(.A1(n389), .A2(n268), .ZN(\selectp1[96] ));
+  NOR2_X1   g127(.A1(n389), .A2(n273), .ZN(\selectp1[97] ));
+  NOR2_X1   g128(.A1(n389), .A2(n276), .ZN(\selectp1[98] ));
+  NOR2_X1   g129(.A1(n389), .A2(n278), .ZN(\selectp1[99] ));
+  NOR2_X1   g130(.A1(n389), .A2(n280), .ZN(\selectp1[100] ));
+  NOR2_X1   g131(.A1(n389), .A2(n282), .ZN(\selectp1[101] ));
+  NOR2_X1   g132(.A1(n389), .A2(n284), .ZN(\selectp1[102] ));
+  NOR2_X1   g133(.A1(n389), .A2(n286), .ZN(\selectp1[103] ));
+  NOR2_X1   g134(.A1(n389), .A2(n288), .ZN(\selectp1[104] ));
+  NOR2_X1   g135(.A1(n389), .A2(n290), .ZN(\selectp1[105] ));
+  NOR2_X1   g136(.A1(n389), .A2(n292), .ZN(\selectp1[106] ));
+  NOR2_X1   g137(.A1(n389), .A2(n294), .ZN(\selectp1[107] ));
+  NOR2_X1   g138(.A1(n389), .A2(n296), .ZN(\selectp1[108] ));
+  NOR2_X1   g139(.A1(n389), .A2(n298), .ZN(\selectp1[109] ));
+  NOR2_X1   g140(.A1(n389), .A2(n300), .ZN(\selectp1[110] ));
+  NOR2_X1   g141(.A1(n389), .A2(n302), .ZN(\selectp1[111] ));
+NAND4_X1_p g142(.A1(\count[6] ), .A2(\count[5] ), .A3(\count[4] ), .A4(\count[7] ), .ZN(n406));
+NOR2_X1_p g143(.A1(n406), .A2(n268), .ZN(\selectp1[112] ));
+NOR2_X1_p g144(.A1(n406), .A2(n273), .ZN(\selectp1[113] ));
+NOR2_X1_p g145(.A1(n406), .A2(n276), .ZN(\selectp1[114] ));
+NOR2_X1_p g146(.A1(n406), .A2(n278), .ZN(\selectp1[115] ));
+NOR2_X1_p g147(.A1(n406), .A2(n280), .ZN(\selectp1[116] ));
+NOR2_X1_p g148(.A1(n406), .A2(n282), .ZN(\selectp1[117] ));
+NOR2_X1_p g149(.A1(n406), .A2(n284), .ZN(\selectp1[118] ));
+NOR2_X1_p g150(.A1(n406), .A2(n286), .ZN(\selectp1[119] ));
+NOR2_X1_p g151(.A1(n406), .A2(n288), .ZN(\selectp1[120] ));
+NOR2_X1_p g152(.A1(n406), .A2(n290), .ZN(\selectp1[121] ));
+NOR2_X1_p g153(.A1(n406), .A2(n292), .ZN(\selectp1[122] ));
+NOR2_X1_p g154(.A1(n406), .A2(n294), .ZN(\selectp1[123] ));
+NOR2_X1_p g155(.A1(n406), .A2(n296), .ZN(\selectp1[124] ));
+NOR2_X1_p g156(.A1(n406), .A2(n298), .ZN(\selectp1[125] ));
+NOR2_X1_p g157(.A1(n406), .A2(n300), .ZN(\selectp1[126] ));
+NOR2_X1_p g158(.A1(n406), .A2(n302), .ZN(\selectp1[127] ));
+OR4_X1_p g159(.A1(\count[6] ), .A2(\count[5] ), .A3(\count[4] ), .A4(\count[7] ), .ZN(n423));
+  NOR2_X1   g160(.A1(n423), .A2(n268), .ZN(\selectp2[0] ));
+  NOR2_X1   g161(.A1(n423), .A2(n273), .ZN(\selectp2[1] ));
+  NOR2_X1   g162(.A1(n423), .A2(n276), .ZN(\selectp2[2] ));
+  NOR2_X1   g163(.A1(n423), .A2(n278), .ZN(\selectp2[3] ));
+  NOR2_X1   g164(.A1(n423), .A2(n280), .ZN(\selectp2[4] ));
+  NOR2_X1   g165(.A1(n423), .A2(n282), .ZN(\selectp2[5] ));
+  NOR2_X1   g166(.A1(n423), .A2(n284), .ZN(\selectp2[6] ));
+  NOR2_X1   g167(.A1(n423), .A2(n286), .ZN(\selectp2[7] ));
+  NOR2_X1   g168(.A1(n423), .A2(n288), .ZN(\selectp2[8] ));
+  NOR2_X1   g169(.A1(n423), .A2(n290), .ZN(\selectp2[9] ));
+  NOR2_X1   g170(.A1(n423), .A2(n292), .ZN(\selectp2[10] ));
+  NOR2_X1   g171(.A1(n423), .A2(n294), .ZN(\selectp2[11] ));
+  NOR2_X1   g172(.A1(n423), .A2(n296), .ZN(\selectp2[12] ));
+  NOR2_X1   g173(.A1(n423), .A2(n298), .ZN(\selectp2[13] ));
+  NOR2_X1   g174(.A1(n423), .A2(n300), .ZN(\selectp2[14] ));
+  NOR2_X1   g175(.A1(n423), .A2(n302), .ZN(\selectp2[15] ));
+  INV_X1    g176(.A(\count[7] ), .ZN(n440));
+NAND4_X1_p g177(.A1(n266), .A2(n265), .A3(\count[4] ), .A4(n440), .ZN(n441));
+NOR2_X1_p g178(.A1(n441), .A2(n268), .ZN(\selectp2[16] ));
+NOR2_X1_p g179(.A1(n441), .A2(n273), .ZN(\selectp2[17] ));
+NOR2_X1_p g180(.A1(n441), .A2(n276), .ZN(\selectp2[18] ));
+NOR2_X1_p g181(.A1(n441), .A2(n278), .ZN(\selectp2[19] ));
+NOR2_X1_p g182(.A1(n441), .A2(n280), .ZN(\selectp2[20] ));
+NOR2_X1_p g183(.A1(n441), .A2(n282), .ZN(\selectp2[21] ));
+NOR2_X1_p g184(.A1(n441), .A2(n284), .ZN(\selectp2[22] ));
+NOR2_X1_p g185(.A1(n441), .A2(n286), .ZN(\selectp2[23] ));
+NOR2_X1_p g186(.A1(n441), .A2(n288), .ZN(\selectp2[24] ));
+NOR2_X1_p g187(.A1(n441), .A2(n290), .ZN(\selectp2[25] ));
+NOR2_X1_p g188(.A1(n441), .A2(n292), .ZN(\selectp2[26] ));
+NOR2_X1_p g189(.A1(n441), .A2(n294), .ZN(\selectp2[27] ));
+NOR2_X1_p g190(.A1(n441), .A2(n296), .ZN(\selectp2[28] ));
+NOR2_X1_p g191(.A1(n441), .A2(n298), .ZN(\selectp2[29] ));
+NOR2_X1_p g192(.A1(n441), .A2(n300), .ZN(\selectp2[30] ));
+NOR2_X1_p g193(.A1(n441), .A2(n302), .ZN(\selectp2[31] ));
+NAND4_X1_p g194(.A1(n266), .A2(\count[5] ), .A3(n264), .A4(n440), .ZN(n458));
+NOR2_X1_p g195(.A1(n458), .A2(n268), .ZN(\selectp2[32] ));
+NOR2_X1_p g196(.A1(n458), .A2(n273), .ZN(\selectp2[33] ));
+NOR2_X1_p g197(.A1(n458), .A2(n276), .ZN(\selectp2[34] ));
+NOR2_X1_p g198(.A1(n458), .A2(n278), .ZN(\selectp2[35] ));
+NOR2_X1_p g199(.A1(n458), .A2(n280), .ZN(\selectp2[36] ));
+NOR2_X1_p g200(.A1(n458), .A2(n282), .ZN(\selectp2[37] ));
+NOR2_X1_p g201(.A1(n458), .A2(n284), .ZN(\selectp2[38] ));
+NOR2_X1_p g202(.A1(n458), .A2(n286), .ZN(\selectp2[39] ));
+NOR2_X1_p g203(.A1(n458), .A2(n288), .ZN(\selectp2[40] ));
+NOR2_X1_p g204(.A1(n458), .A2(n290), .ZN(\selectp2[41] ));
+NOR2_X1_p g205(.A1(n458), .A2(n292), .ZN(\selectp2[42] ));
+NOR2_X1_p g206(.A1(n458), .A2(n294), .ZN(\selectp2[43] ));
+NOR2_X1_p g207(.A1(n458), .A2(n296), .ZN(\selectp2[44] ));
+NOR2_X1_p g208(.A1(n458), .A2(n298), .ZN(\selectp2[45] ));
+NOR2_X1_p g209(.A1(n458), .A2(n300), .ZN(\selectp2[46] ));
+NOR2_X1_p g210(.A1(n458), .A2(n302), .ZN(\selectp2[47] ));
+NAND4_X1_p g211(.A1(n266), .A2(\count[5] ), .A3(\count[4] ), .A4(n440), .ZN(n475));
+NOR2_X1_p g212(.A1(n475), .A2(n268), .ZN(\selectp2[48] ));
+NOR2_X1_p g213(.A1(n475), .A2(n273), .ZN(\selectp2[49] ));
+NOR2_X1_p g214(.A1(n475), .A2(n276), .ZN(\selectp2[50] ));
+NOR2_X1_p g215(.A1(n475), .A2(n278), .ZN(\selectp2[51] ));
+NOR2_X1_p g216(.A1(n475), .A2(n280), .ZN(\selectp2[52] ));
+NOR2_X1_p g217(.A1(n475), .A2(n282), .ZN(\selectp2[53] ));
+NOR2_X1_p g218(.A1(n475), .A2(n284), .ZN(\selectp2[54] ));
+NOR2_X1_p g219(.A1(n475), .A2(n286), .ZN(\selectp2[55] ));
+NOR2_X1_p g220(.A1(n475), .A2(n288), .ZN(\selectp2[56] ));
+NOR2_X1_p g221(.A1(n475), .A2(n290), .ZN(\selectp2[57] ));
+NOR2_X1_p g222(.A1(n475), .A2(n292), .ZN(\selectp2[58] ));
+NOR2_X1_p g223(.A1(n475), .A2(n294), .ZN(\selectp2[59] ));
+NOR2_X1_p g224(.A1(n475), .A2(n296), .ZN(\selectp2[60] ));
+NOR2_X1_p g225(.A1(n475), .A2(n298), .ZN(\selectp2[61] ));
+NOR2_X1_p g226(.A1(n475), .A2(n300), .ZN(\selectp2[62] ));
+NOR2_X1_p g227(.A1(n475), .A2(n302), .ZN(\selectp2[63] ));
+NAND4_X1_p g228(.A1(\count[6] ), .A2(n265), .A3(n264), .A4(n440), .ZN(n492));
+NOR2_X1_p g229(.A1(n492), .A2(n268), .ZN(\selectp2[64] ));
+NOR2_X1_p g230(.A1(n492), .A2(n273), .ZN(\selectp2[65] ));
+NOR2_X1_p g231(.A1(n492), .A2(n276), .ZN(\selectp2[66] ));
+NOR2_X1_p g232(.A1(n492), .A2(n278), .ZN(\selectp2[67] ));
+NOR2_X1_p g233(.A1(n492), .A2(n280), .ZN(\selectp2[68] ));
+NOR2_X1_p g234(.A1(n492), .A2(n282), .ZN(\selectp2[69] ));
+  NOR2_X1   g235(.A1(n492), .A2(n284), .ZN(\selectp2[70] ));
+  NOR2_X1   g236(.A1(n492), .A2(n286), .ZN(\selectp2[71] ));
+  NOR2_X1   g237(.A1(n492), .A2(n288), .ZN(\selectp2[72] ));
+NOR2_X1_p g238(.A1(n492), .A2(n290), .ZN(\selectp2[73] ));
+NOR2_X1_p g239(.A1(n492), .A2(n292), .ZN(\selectp2[74] ));
+NOR2_X1_p g240(.A1(n492), .A2(n294), .ZN(\selectp2[75] ));
+  NOR2_X1   g241(.A1(n492), .A2(n296), .ZN(\selectp2[76] ));
+NOR2_X1_p g242(.A1(n492), .A2(n298), .ZN(\selectp2[77] ));
+NOR2_X1_p g243(.A1(n492), .A2(n300), .ZN(\selectp2[78] ));
+  NOR2_X1   g244(.A1(n492), .A2(n302), .ZN(\selectp2[79] ));
+NAND4_X1_p g245(.A1(\count[6] ), .A2(n265), .A3(\count[4] ), .A4(n440), .ZN(n509));
+NOR2_X1_p g246(.A1(n509), .A2(n268), .ZN(\selectp2[80] ));
+NOR2_X1_p g247(.A1(n509), .A2(n273), .ZN(\selectp2[81] ));
+NOR2_X1_p g248(.A1(n509), .A2(n276), .ZN(\selectp2[82] ));
+NOR2_X1_p g249(.A1(n509), .A2(n278), .ZN(\selectp2[83] ));
+  NOR2_X1   g250(.A1(n509), .A2(n280), .ZN(\selectp2[84] ));
+NOR2_X1_p g251(.A1(n509), .A2(n282), .ZN(\selectp2[85] ));
+NOR2_X1_p g252(.A1(n509), .A2(n284), .ZN(\selectp2[86] ));
+NOR2_X1_p g253(.A1(n509), .A2(n286), .ZN(\selectp2[87] ));
+NOR2_X1_p g254(.A1(n509), .A2(n288), .ZN(\selectp2[88] ));
+NOR2_X1_p g255(.A1(n509), .A2(n290), .ZN(\selectp2[89] ));
+NOR2_X1_p g256(.A1(n509), .A2(n292), .ZN(\selectp2[90] ));
+NOR2_X1_p g257(.A1(n509), .A2(n294), .ZN(\selectp2[91] ));
+NOR2_X1_p g258(.A1(n509), .A2(n296), .ZN(\selectp2[92] ));
+NOR2_X1_p g259(.A1(n509), .A2(n298), .ZN(\selectp2[93] ));
+NOR2_X1_p g260(.A1(n509), .A2(n300), .ZN(\selectp2[94] ));
+NOR2_X1_p g261(.A1(n509), .A2(n302), .ZN(\selectp2[95] ));
+NAND4_X1_p g262(.A1(\count[6] ), .A2(\count[5] ), .A3(n264), .A4(n440), .ZN(n526));
+NOR2_X1_p g263(.A1(n526), .A2(n268), .ZN(\selectp2[96] ));
+NOR2_X1_p g264(.A1(n526), .A2(n273), .ZN(\selectp2[97] ));
+NOR2_X1_p g265(.A1(n526), .A2(n276), .ZN(\selectp2[98] ));
+NOR2_X1_p g266(.A1(n526), .A2(n278), .ZN(\selectp2[99] ));
+NOR2_X1_p g267(.A1(n526), .A2(n280), .ZN(\selectp2[100] ));
+NOR2_X1_p g268(.A1(n526), .A2(n282), .ZN(\selectp2[101] ));
+NOR2_X1_p g269(.A1(n526), .A2(n284), .ZN(\selectp2[102] ));
+NOR2_X1_p g270(.A1(n526), .A2(n286), .ZN(\selectp2[103] ));
+NOR2_X1_p g271(.A1(n526), .A2(n288), .ZN(\selectp2[104] ));
+NOR2_X1_p g272(.A1(n526), .A2(n290), .ZN(\selectp2[105] ));
+NOR2_X1_p g273(.A1(n526), .A2(n292), .ZN(\selectp2[106] ));
+NOR2_X1_p g274(.A1(n526), .A2(n294), .ZN(\selectp2[107] ));
+NOR2_X1_p g275(.A1(n526), .A2(n296), .ZN(\selectp2[108] ));
+NOR2_X1_p g276(.A1(n526), .A2(n298), .ZN(\selectp2[109] ));
+NOR2_X1_p g277(.A1(n526), .A2(n300), .ZN(\selectp2[110] ));
+NOR2_X1_p g278(.A1(n526), .A2(n302), .ZN(\selectp2[111] ));
+NAND4_X1_p g279(.A1(\count[6] ), .A2(\count[5] ), .A3(\count[4] ), .A4(n440), .ZN(n543));
+NOR2_X1_p g280(.A1(n543), .A2(n268), .ZN(\selectp2[112] ));
+NOR2_X1_p g281(.A1(n543), .A2(n273), .ZN(\selectp2[113] ));
+NOR2_X1_p g282(.A1(n543), .A2(n276), .ZN(\selectp2[114] ));
+NOR2_X1_p g283(.A1(n543), .A2(n278), .ZN(\selectp2[115] ));
+NOR2_X1_p g284(.A1(n543), .A2(n280), .ZN(\selectp2[116] ));
+NOR2_X1_p g285(.A1(n543), .A2(n282), .ZN(\selectp2[117] ));
+NOR2_X1_p g286(.A1(n543), .A2(n284), .ZN(\selectp2[118] ));
+NOR2_X1_p g287(.A1(n543), .A2(n286), .ZN(\selectp2[119] ));
+NOR2_X1_p g288(.A1(n543), .A2(n288), .ZN(\selectp2[120] ));
+NOR2_X1_p g289(.A1(n543), .A2(n290), .ZN(\selectp2[121] ));
+NOR2_X1_p g290(.A1(n543), .A2(n292), .ZN(\selectp2[122] ));
+NOR2_X1_p g291(.A1(n543), .A2(n294), .ZN(\selectp2[123] ));
+NOR2_X1_p g292(.A1(n543), .A2(n296), .ZN(\selectp2[124] ));
+NOR2_X1_p g293(.A1(n543), .A2(n298), .ZN(\selectp2[125] ));
+NOR2_X1_p g294(.A1(n543), .A2(n300), .ZN(\selectp2[126] ));
+NOR2_X1_p g295(.A1(n543), .A2(n302), .ZN(\selectp2[127] ));

@@ -140,7 +140,6 @@ class NangateParser:
                     pins_map = {}
                     for i in range(0, len(pin_info), 2):
                         pins_map[pin_info[i].strip()] = pin_info[i+1].strip()
-
                     logic_gate = self.logic_gates.get(logic_gate_type)
                     transistor_info, inputs, outputs, nodes = logic_gate.abc_to_spice(
                             new_name=logic_gate_name,
@@ -170,7 +169,7 @@ class NangateParser:
 
     def write_spice(self, logic_gates: List[LogicGate], inputs: List[str], outputs: List[str]):
 
-        with open(path_concat(self.BASE_PATH, "circuits", "spice", "test" + self.file_name.replace('.v', '')), 'w') as output:
+        with open(path_concat(self.BASE_PATH, "circuits", "spice", self.file_name.replace('.v', '')), 'w') as output:
             output.write(f".supply {self.power} \n")
             output.write(f".ground {self.gnd} \n")
             output.write(f".P-Type {self.pmos} \n")
@@ -219,15 +218,21 @@ class NangateParser:
 # @click.command(name='verilog_to_spice')
 # @click.option("-n", "--name", type=str, required=True, help="Circuit verilog name")
 def verilog_to_spice(name):
-    for circuit in ['C17_nangate']:
-        parser = NangateParser(f"{circuit}.v")
-        parser.read_library()
-        parser.read_verilog_old()
+    # for circuit in ['C17_nangate']:
+    #     parser = NangateParser(f"{circuit}.v")
+    #     parser.read_library()
+    #     parser.read_verilog_old()
     # for circuit in ['c432', 'c499', 'c880', 'c1355', 'c1908',
     #                     'c2670', 'c3540', 'c5315', 'c6288', 'c7552']:
     #     parser = NangateParser(f"{circuit}.v")
     #     parser.read_library()
     #     parser.read_verilog_abc()
+    parser = NangateParser(f"{name}.v")
+    parser.read_library()
+    parser.read_verilog_abc()
 
 if __name__ == '__main__':
-    verilog_to_spice('C17_nangate')
+    for circuit in ['b01', 'b02', 'b03', 'b04', 'b05', 'b06', 'b07', 'b08', 'b09', 'b10', 'b11', 'b12', 'b13', 'b14',
+                    'b15', 'b17', 'b20', 'b21', 'b22']:
+            # ['int2float', 'cavlc', 'priority', 'router', 'dec', 'ctrl',  'i2c', 'voter', 'arbiter', 'mem_ctrl']:
+        verilog_to_spice(circuit)
